@@ -9,20 +9,25 @@
 @font-face { font-family: Avenir Next; src: url("avenir_next.woff2"); }
 body {
     margin: 0; padding: 0; width: 100vw; height: 100vh;
-    background-color: #000; background-image: url("still.jpg"); background-repeat: no-repeat; background-position: center; background-size: cover;
+    background-color: #000; background: url("still.jpg"); background-repeat: no-repeat; background-position: center; background-size: cover;
     color: #f00; font-family: Avenir Next, sans-serif;
 }
-@keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fadein { from { opacity: 1; } to { opacity: 1; } }
 h1, h2, h3, .m { font-family: Caligna; font-weight: 400; margin: 0; padding: 0; }
-h2 { position: absolute; bottom: 0; right: 0; padding-right: 1rem; font-size: 7em; text-align: right;  }
+h2 { position: absolute; bottom: 0; right: 0; padding-right: 1rem; font-size: 6em; text-align: right;  }
 .m { font-size: 0.6rem; }
-header { display: grid; grid-gap: 1rem; padding-top: 1rem; }
-h1 { grid-row: 1; font-size: 7em; padding-left: 1rem; height: auto; }
+header { display: grid; grid-column-gap: 1rem; padding-top: 1rem; grid-template-columns: 2fr 3fr 1fr 1fr 1.5fr; }
+h1 { grid-row: 1; font-size: 6em; padding-left: 1rem; height: auto; }
 header p { grid-row: 1; font-size: 0.85rem; margin: 0; animation: fadein 2s ease-in 2s 1 normal both running; }
 main { width: 80%; margin: 15vh auto; display: grid; grid-gap: 2rem; animation: fadein 2s ease-in 4s 1 normal both running; }
 h3 { font-size: 4rem; grid-row: 1; }
 main p { display: inline; grid-row: 1; text-align: right; font-style: italic; padding-right: 0.5rem; }
 #date { font-size: 2rem; font-family: Caligna, sans-serif; }
+#info { width: 20rem; grid-row: 2; grid-column: 2; width: 100%;}
+#info p { margin-bottom: 1rem; }
+#nu { cursor: pointer; }
+p { line-height: 1.1rem; width: 100%; }
+a { color: #f00; text-decoration: none; }
 #v { position: fixed; right: 0; bottom: 0; width: 100%; height: 100%; z-index: -1; }
 </style>
 </head>
@@ -30,8 +35,16 @@ main p { display: inline; grid-row: 1; text-align: right; font-style: italic; pa
 <header>
 <h1>NWLX</h1>
 <p id="nu">[nu] - new; [lux] - unit of illumination<br><br>Newluxx is a Studio based in Basel, Switzerland.<br>We are focused on Fashion Research.</p>
-<p><span class="m">CONTACT</span><br>info@nwlx.ch</p>
-<p><span class="m">INSTAGRAM</span></br>@newluxx.ch</p>
+<div id="info" hidden>
+<p>We strive for a transmedia and multisensory design practice.</p>
+<p>Our practice covers product design, accessory design and experience design.</p>
+<p>Our process is based on conceptual research, bodywork, form exploration and a fusion of analog and digital mo- delling. We are pursuing a poetic application of digital mo- delling into the design process and the presented items. Exploring hybrid....</p>
+<p>Our main interest lays in material culture. We are focused on investigating the aura of “luxus“, reflecting on values and collective norms/standards that engage identified audiences.</p>
+<p>Every project is an intervention in the process of produ- cing meaning and exploring relevancy within a different context.</p>
+<p>We want to contribute to cultural production with sen- sitive and innovative ‚output‘ capable of stimulating the sphere of feelings and emotions while provoking questi- ons and strong positive critical thinking.</p>
+</div>
+<p><span class="m">CONTACT</span><br><a href="mailto:info@nwlx.ch">info@nwlx.ch</a></p>
+<p><span class="m">INSTAGRAM</span></br><a href="https://instagram.com/newluxx.ch">@newluxx.ch</a></p>
 <p><span class="m">CURRENT EXHIBITION</span><br>INDUSTRIA BOTANICA<br>DEC 16 2021 - JAN 27 2021<br>Zabriskie Point - 1205 Genève</p>
 </header>
 <main>
@@ -40,10 +53,23 @@ main p { display: inline; grid-row: 1; text-align: right; font-style: italic; pa
 Catch a glimpse of our state of research<br>breeding in the nwlx-incubator.<br><br>
 Zabriskie Point - Rond / point de Plainpalais<br>1205 Genève<br><br>
 Vernissage Dec 16; 6pm<br><br><br>
-<span id="date">DEC 16 2021 — JAN 27 2022</span>
-</p>
+<span id="date">DEC 16 2021 — JAN 27 2022</span></p>
 </main>
 <h2>ONE</h2>
-<!-- <video autoplay muted loop playsinline id="v"><source src="luxx.mp4" type="video/mp4"></video> -->
+<video autoplay muted loop playsinline id="v"><source src="luxx.mp4" type="video/mp4"></video>
+<script type="text/javascript">
+var nu = document.querySelector("#nu");
+var info = document.querySelector("#info");
+var main = document.querySelector("main");
+var body = document.querySelector("body");
+var bg = body.style;
+var showing = false;
+nu.onclick = function () {
+    info.hidden = !info.hidden;
+    main.style.display = info.hidden ? "" : "none";
+    if (!info.hidden) body.style.background = "#000";
+    else body.style = bg;
+}
+</script>
 </body>
 </html>
