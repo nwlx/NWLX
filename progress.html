@@ -24,7 +24,7 @@ h3 { font-size: 4rem; grid-row: 1; }
 main p { display: inline; grid-row: 1; text-align: right; font-style: italic; padding-right: 0.5rem; line-height: 1.5rem; }
 #date { font-size: 2rem; font-family: Caligna, sans-serif; }
 #info { width: 20rem; grid-row: 2; grid-column: 2; width: 100%; text-align: justify; }
-#info p { margin-bottom: 1rem; }
+#info p { margin-bottom: 1rem; animation: none !important; }
 #nu { cursor: pointer; }
 p { line-height: 1.1rem; width: 100%; }
 a { color: #f00; text-decoration: none; }
@@ -64,12 +64,15 @@ var main = document.querySelector("main");
 var body = document.querySelector("body");
 var video = document.querySelector("video");
 var bg = body.style;
+setTimeout(function () {
 nu.onclick = function () {
     info.hidden = !info.hidden;
     main.style.display = !info.hidden ? "none" : "";
+    main.style.animation = "none";
     video.style.display = !info.hidden ? "none" : "";
     if (info.hidden) body.style = bg; else body.style.background = "#000";
 }
+}, 3000);
 </script>
 </body>
 </html>
