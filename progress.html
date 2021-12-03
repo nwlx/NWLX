@@ -12,18 +12,18 @@ body {
     background-color: #000; background-image: url("still.jpg"); background-repeat: no-repeat; background-position: center; background-size: cover;
     color: #f00; font-family: Avenir Next, sans-serif;
 }
-@keyframes fadein { from { opacity: 1; } to { opacity: 1; } }
+@keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
 h1, h2, h3, .m { font-family: Caligna; font-weight: 400; margin: 0; padding: 0; }
 h2 { position: absolute; bottom: 0; right: 0; padding-right: 1rem; font-size: 7em; text-align: right;  }
 .m { font-size: 0.6rem; }
 header { display: grid; grid-gap: 1rem; padding-top: 1rem; }
 h1 { grid-row: 1; font-size: 7em; padding-left: 1rem; height: auto; }
-header p { grid-row: 1; font-size: 0.85rem; margin: 0; animation: fadein 3s ease-in; }
-main { width: 80%; margin: 15vh auto; display: grid; grid-gap: 2rem; animation: fadein 3s ease-in;  }
+header p { grid-row: 1; font-size: 0.85rem; margin: 0; animation: fadein 2s ease-in 2s 1 normal both running; }
+main { width: 80%; margin: 15vh auto; display: grid; grid-gap: 2rem; animation: fadein 2s ease-in 4s 1 normal both running; }
 h3 { font-size: 4rem; grid-row: 1; }
 main p { display: inline; grid-row: 1; text-align: right; font-style: italic; }
 #date { font-size: 2rem; font-family: Caligna, sans-serif; }
-#nu {  }
+#v { position: fixed; right: 0; bottom: 0; width: 100%; height: 100%; z-index: -1; }
 </style>
 </head>
 <body>
@@ -44,5 +44,6 @@ Vernissage Dec 16; 6pm<br><br><br>
 </p>
 </main>
 <h2>ONE</h2>
+<!-- <video autoplay muted loop playsinline id="v"><source src="luxx.mp4" type="video/mp4"></video> -->
 </body>
 </html>
