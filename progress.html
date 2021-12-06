@@ -1,79 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>NWLX</title>
-<style type="text/css">
-@font-face { font-family: Caligna; src: url("caligna.woff2"); }
-@font-face { font-family: Avenir Next; src: url("avenir_next.woff2"); }
-body {
-    margin: 0; padding: 0; width: 100vw; height: 100vh;
-    background-color: #000; background: url("still.jpg"); background-repeat: no-repeat; background-position: center; background-size: cover;
-    color: #f00; font-family: Avenir Next, sans-serif;
-}
-@keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
-h1, h2, h3, .m { font-family: Caligna; font-weight: 400; margin: 0; padding: 0; }
-h2 { position: absolute; bottom: 0; right: 0; padding-right: 1rem; font-size: 6em; text-align: right;  }
-.m { font-size: 0.6rem; }
-header { display: grid; grid-column-gap: 1rem; padding-top: 1rem; grid-template-columns: 2fr 3fr 1fr 1fr 1.5fr; }
-h1 { grid-row: 1; font-size: 6em; padding-left: 1rem; height: auto; }
-header p { grid-row: 1; font-size: 0.85rem; margin: 0; animation: fadein 2s ease-in 2s 1 normal both running; }
-main { width: 80%; margin: 15vh auto; display: grid; grid-gap: 2rem; animation: fadein 2s ease-in 4s 1 normal both running; }
-h3 { font-size: 4rem; grid-row: 1; }
-main p { display: inline; grid-row: 1; text-align: right; font-style: italic; padding-right: 0.5rem; line-height: 1.5rem; }
-#date { font-size: 2rem; font-family: Caligna, sans-serif; }
-#info { width: 20rem; grid-row: 2; grid-column: 2; width: 100%; text-align: justify; }
-#info p { margin-bottom: 1rem; animation: none !important; }
-p { line-height: 1.1rem; width: 100%; }
-a { color: #f00; text-decoration: none; }
-#v { z-index: -1; position: fixed; right: 0; bottom: 0; width: 100%; height: 100%; object-fit: cover; }
-</style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NWLX</title>
+    <style type="text/css">
+        @font-face { font-family: Caligna; src: url("caligna.woff2"); }
+        @font-face { font-family: Avenir Next; src: url("avenir_next.woff2"); }
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: #000;
+            color: #f00;
+            font-family: Avenir Next, sans-serif;
+        }
+        @keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
+        h1, h2, h3, .m {
+            font-family: Caligna;
+            font-weight: 400;
+            margin: 0;
+            padding: 0;
+        }
+        h2 {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            padding-right: 1rem;
+            font-size: 6em;
+            text-align: right;
+            letter-spacing: 0.06em;
+            transition: color 0.1s linear;
+        }
+        .m {
+            font-size: 0.6rem;
+            letter-spacing: .3em;
+        }
+        header {
+            display: grid;
+            grid-column-gap: 1rem;
+            padding-top: 1rem;
+            grid-template-columns: 2fr 3fr 1fr 1fr 1.5fr;
+        }
+        h1 {
+            grid-row: 1;
+            font-size: 6em;
+            padding-left: 1rem;
+            height: auto;
+            letter-spacing: 0.06em;
+        }
+        header p {
+            grid-row: 1;
+            font-size: 0.85rem;
+            margin: 0;
+            animation: fadein 2s ease-in 2s 1 normal both running;
+        }
+        #ib {
+            width: 80%;
+            margin: 10vh auto;
+            transition: opacity .1s linear;
+        }
+        h3 {
+            font-size: 4rem;
+            letter-spacing: 0.02em;
+            float: left;
+        }
+        #ib div {
+            display: inline;
+        }
+        #ib p {
+            text-align: right;
+            padding-right: 0.5rem;
+            line-height: 1.5rem;
+            margin: 0 0 1rem 0;
+        }
+        #ib a {
+            border-bottom: 0.05rem solid;
+            padding-bottom: 0.1rem;
+            font-size: 0.8rem;
+        }
+        #ib a:hover {
+            border-bottom: 0.15em solid;
+        }
+        #ib img {
+            margin: 0 0 1em auto;
+            height: 4em;
+            float: right;
+        }
+        #date {
+            font-size: 1.8rem;
+            font-family: Caligna, sans-serif;
+            letter-spacing: 0.06em;
+            margin: 2rem 0 1rem 0 !important;
+        }
+        #info {
+            width: 20rem;
+            grid-row: 2;
+            grid-column: 2;
+            width: 100%;
+            text-align: justify;
+        }
+        #info p {
+            margin-bottom: 1rem;
+            animation: none !important;
+        }
+        p {
+            line-height: 1.1rem;
+            width: 100%;
+        }
+        a {
+            color: #f00;
+            text-decoration: none;
+        }
+        #v {
+            z-index: -1;
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 1;
+            transition: opacity 0.1s linear;
+        }
+        @-moz-document url-prefix() {
+            h1 { transform: translateY(-0.13em); }
+            h2 { transform: translateY(0.13em); }
+            h3 { transform: translateY(-0.13em); }
+        }
+    </style>
 </head>
 <body>
-<header>
-<h1>NWLX</h1>
-<p id="nu">[nu] – new; [lux] – unit of illumination<br><br>Newluxx is a Studio based in Basel, Switzerland.<br>We are focused on Fashion Research.</p>
-<div id="info" hidden>
-<p>We strive for a transmedia and multisensory design practice.</p>
-<p>Our practice covers product design, accessory design and experience design.</p>
-<p>Our process is based on conceptual research, bodywork, form exploration and a fusion of analog and digital modelling. We are pursuing a poetic application of digital modelling into the design process and the presented items. Exploring hybrid....</p>
-<p>Our main interest lays in material culture. We are focused on investigating the aura of “luxus”, reflecting on values and collective norms/standards that engage identified audiences.</p>
-<p>Every project is an intervention in the process of producing meaning and exploring relevancy within a different context.</p>
-<p>We want to contribute to cultural production with sensitive and innovative ‘output’ capable of stimulating the sphere of feelings and emotions while provoking questions and strong positive critical thinking.</p>
-</div>
-<p><span class="m">CONTACT</span><br><a href="mailto:info@nwlx.ch">info@nwlx.ch</a></p>
-<p><span class="m">INSTAGRAM</span></br><a href="https://instagram.com/newluxx.ch">@newluxx.ch</a></p>
-<p><span class="m">CURRENT EXHIBITION</span><br>INDUSTRIA BOTANICA<br>DEC 16 2021 – JAN 27 2021<br>Zabriskie Point – 1205 Genève</p>
-</header>
-<main>
-<h3>INDUSTRIA<br>BOTANICA</h3>
-<p>Body is Environment – Tools and Acts of Cultivation<br><br>
-Catch a glimpse of our state of research<br>breeding in the nwlx-incubator.<br><br>
-Zabriskie Point – Rond / point de Plainpalais<br>1205 Genève<br><br>
-Vernissage Dec 16; 6pm<br><br><br>
-<span id="date">DEC 16 2021 – JAN 27 2022</span></p>
-</main>
-<h2>ONE</h2>
-<video autoplay loop muted playsinline id="v" poster="still.jpg"><source src="luxx.mp4" type="video/mp4"></video>
-<script type="text/javascript">
-var nu = document.querySelector("#nu");
-var info = document.querySelector("#info");
-var nu = document.querySelector("#nu");
-var main = document.querySelector("main");
-var body = document.querySelector("body");
-var video = document.querySelector("video");
-var bg = body.style;
-setTimeout(function () {
-    nu.style.cursor = "pointer";
-    nu.onclick = function () {
-        info.hidden = !info.hidden;
-        main.style.display = !info.hidden ? "none" : "";
-        main.style.animation = "none";
-        video.style.display = !info.hidden ? "none" : "";
-        if (info.hidden) body.style = bg; else body.style.background = "#000";
-    }
-}, 3000);
-</script>
+    <header>
+        <h1>NWLX</h1>
+        <p id="nu">[nu] – new; [lux] – unit of illumination<br><br>Newluxx is a Studio
+            based in Basel, Switzerland.<br>We are focused on Fashion Research.</p>
+        <div id="info" hidden>
+            <p>We strive for a transmedia and multisensory design practice.</p>
+            <p>Our practice covers product design, accessory design and experience design.</p>
+            <p>Our process is based on conceptual research, bodywork, form exploration and a fusion of analog and digital modelling. We are pursuing a poetic application of digital modelling into the design process and the presented items. Exploring hybrid....</p>
+            <p>Our main interest lays in material culture. We are focused on investigating the aura of “luxus”, reflecting on values and collective norms/standards that engage identified audiences.</p>
+            <p>Every project is an intervention in the process of producing meaning and exploring relevancy within a different context.</p>
+            <p>We want to contribute to cultural production with sensitive and innovative ‘output’ capable of stimulating the sphere of feelings and emotions while provoking questions and strong positive critical thinking.</p>
+        </div>
+        <p class="extra"><span class="m">CONTACT</span><br><a href="mailto:info@nwlx.ch">info@nwlx.ch</a></p>
+        <p class="extra"><span class="m">INSTAGRAM</span></br><a href="https://instagram.com/newluxx.ch">@newluxx.ch</a></p>
+        <p id="ex"><span class="m">CURRENT EXHIBITION</span><br>INDUSTRIA BOTANICA<br>DEC 16 2021 – JAN 27 2021<br>Zabriskie Point – 1205 Genève</p>
+    </header>
+    <div id="ib" hidden>
+        <h3>INDUSTRIA<br>BOTANICA</h3>
+        <div>
+            <p>Body is Environment – Tools and Acts of Cultivation</p>
+            <p>Catch a glimpse of our state of research<br>breeding in the nwlx-incubator.</p>
+            <p>Zabriskie Point – Rond / point de Plainpalais<br>1205 Genève</p>
+            <p>Vernissage Dec 16; 6pm</p>
+            <p><a href="#">view concept & process</a></p>
+            <p id="date">DEC 16 2021 – JAN 27 2022</p>
+            <img src="bs.svg">
+        </div>
+    </div>
+    <h2>ONE</h2>
+    <video autoplay loop muted playsinline id="v" poster="still.jpg"><source src="luxx.mp4" type="video/mp4"></video>
+        <script type="text/javascript">
+            var nu = document.querySelector("#nu");
+            var ex = document.querySelector("#ex");
+            var info = document.querySelector("#info");
+            var ib = document.querySelector("#ib");
+            var one = document.querySelector("h2");
+            var video = document.querySelector("video");
+            one.style.cursor = "pointer";
+            var show_info = () => {
+                info.hidden = !info.hidden;
+                video.style.opacity = !info.hidden ? 0 : 1;
+                if (!info.hidden) ib.hidden = true;
+                one.style.color = "#f00";
+            };
+            var show_ex = () => {
+                ib.hidden = !ib.hidden;
+                ib.opacity = ib.hidden ? 0 : 1;
+                one.style.color = ib.hidden ? "#f00" : "#000";
+                if (!ib.hidden) info.hidden = true;
+            };
+            one.onclick = show_ex;
+            setTimeout(() => {
+                nu.style.cursor = "pointer";
+                ex.style.cursor = "pointer";
+                nu.onclick = show_info;
+                ex.onclick = show_ex;
+            }, 3000);
+        </script>
 </body>
 </html>
