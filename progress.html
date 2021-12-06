@@ -166,9 +166,17 @@
         var ex = document.querySelector("#ex");
         var info = document.querySelector("#info");
         var ib = document.querySelector("#ib");
-        var one = document.querySelector("h2");
         var video = document.querySelector("video");
+        var nwlx = document.querySelector("h1");
+        var one = document.querySelector("h2");
+        nwlx.style.cursor = "pointer";
         one.style.cursor = "pointer";
+        nwlx.onclick = () => {
+            info.hidden = true;
+            ib.hidden = true;
+            video.style.opacity = 1;
+            one.style.color = "#f00";
+        };
         var show_info = () => {
             info.hidden = !info.hidden;
             video.style.opacity = !info.hidden ? 0 : 1;
@@ -177,8 +185,8 @@
         };
         var show_ex = () => {
             ib.hidden = !ib.hidden;
-            ib.opacity = ib.hidden ? 0 : 1;
             one.style.color = ib.hidden ? "#f00" : "#000";
+            video.style.opacity = 1;
             if (!ib.hidden) info.hidden = true;
         };
         one.onclick = show_ex;
