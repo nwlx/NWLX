@@ -124,18 +124,17 @@
             opacity: 1;
             transition: opacity 0.1s linear;
         }
-        @-moz-document url-prefix() {
-            h1 { transform: translateY(-0.13em); }
-            h2 { transform: translateY(0.13em); }
-            h3 { transform: translateY(-0.13em); }
-        }
-    </style>
+    @-moz-document url-prefix() {
+        h1 { transform: translateY(-0.13em); }
+        h2 { transform: translateY(0.13em); }
+        h3 { transform: translateY(-0.13em); }
+    }
+</style>
 </head>
 <body>
     <header>
         <h1>NWLX</h1>
-        <p id="nu">[nu] – new; [lux] – unit of illumination<br><br>Newluxx is a Studio
-            based in Basel, Switzerland.<br>We are focused on Fashion Research.</p>
+        <p id="nu">[nu] – new; [lux] – unit of illumination<br><br>Newluxx is a Studio based in Basel, Switzerland.<br>We are focused on Fashion Research.</p>
         <div id="info" hidden>
             <p>We strive for a transmedia and multisensory design practice.</p>
             <p>Our practice covers product design, accessory design and experience design.</p>
@@ -162,33 +161,33 @@
     </div>
     <h2>ONE</h2>
     <video autoplay loop muted playsinline id="v" poster="still.jpg"><source src="luxx.mp4" type="video/mp4"></video>
-        <script type="text/javascript">
-            var nu = document.querySelector("#nu");
-            var ex = document.querySelector("#ex");
-            var info = document.querySelector("#info");
-            var ib = document.querySelector("#ib");
-            var one = document.querySelector("h2");
-            var video = document.querySelector("video");
-            one.style.cursor = "pointer";
-            var show_info = () => {
-                info.hidden = !info.hidden;
-                video.style.opacity = !info.hidden ? 0 : 1;
-                if (!info.hidden) ib.hidden = true;
-                one.style.color = "#f00";
-            };
-            var show_ex = () => {
-                ib.hidden = !ib.hidden;
-                ib.opacity = ib.hidden ? 0 : 1;
-                one.style.color = ib.hidden ? "#f00" : "#000";
-                if (!ib.hidden) info.hidden = true;
-            };
-            one.onclick = show_ex;
-            setTimeout(() => {
-                nu.style.cursor = "pointer";
-                ex.style.cursor = "pointer";
-                nu.onclick = show_info;
-                ex.onclick = show_ex;
-            }, 3000);
-        </script>
+    <script type="text/javascript">
+        var nu = document.querySelector("#nu");
+        var ex = document.querySelector("#ex");
+        var info = document.querySelector("#info");
+        var ib = document.querySelector("#ib");
+        var one = document.querySelector("h2");
+        var video = document.querySelector("video");
+        one.style.cursor = "pointer";
+        var show_info = () => {
+            info.hidden = !info.hidden;
+            video.style.opacity = !info.hidden ? 0 : 1;
+            if (!info.hidden) ib.hidden = true;
+            one.style.color = "#f00";
+        };
+        var show_ex = () => {
+            ib.hidden = !ib.hidden;
+            ib.opacity = ib.hidden ? 0 : 1;
+            one.style.color = ib.hidden ? "#f00" : "#000";
+            if (!ib.hidden) info.hidden = true;
+        };
+        one.onclick = show_ex;
+        setTimeout(() => {
+            nu.style.cursor = "pointer";
+            ex.style.cursor = "pointer";
+            nu.onclick = show_info;
+            ex.onclick = show_ex;
+        }, 3000);
+    </script>
 </body>
 </html>
