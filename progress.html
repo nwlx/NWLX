@@ -16,6 +16,10 @@
             color: #f00;
             font-family: Avenir Next, sans-serif;
         }
+        ::selection {
+            color: #000;
+            background: #a00;
+        }
         @keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
         h1, h2, h3, .m {
             font-family: Caligna;
@@ -31,11 +35,10 @@
             font-size: 6em;
             text-align: right;
             letter-spacing: 0.06em;
-            transition: color 0.1s linear;
         }
         .m {
             font-size: 0.6rem;
-            letter-spacing: .3em;
+            letter-spacing: .2em;
         }
         header {
             display: grid;
@@ -58,13 +61,14 @@
         }
         #ib {
             width: 80%;
-            margin: 10vh auto;
-            transition: opacity .1s linear;
+            margin: 15vh auto;
+        }
+        #l {
+            float: left;
         }
         h3 {
             font-size: 4rem;
             letter-spacing: 0.02em;
-            float: left;
         }
         #ib div {
             display: inline;
@@ -76,16 +80,16 @@
             margin: 0 0 1rem 0;
         }
         #ib a {
-            border-bottom: 0.05rem solid;
             padding-bottom: 0.1rem;
             font-size: 0.8rem;
+            margin-left: .2em;
         }
         #ib a:hover {
-            border-bottom: 0.15em solid;
+            border-bottom: 0.05em solid;
         }
         #ib img {
-            margin: 0 0 1em auto;
-            height: 4em;
+            margin: .5em 0 1em auto;
+            height: 3em;
             float: right;
         }
         #date {
@@ -122,7 +126,6 @@
             height: 100%;
             object-fit: cover;
             opacity: 1;
-            transition: opacity 0.1s linear;
         }
     @-moz-document url-prefix() {
         h1 { transform: translateY(-0.13em); }
@@ -134,27 +137,27 @@
 <body>
     <header>
         <h1>NWLX</h1>
-        <p id="nu">[nu] – new; [lux] – unit of illumination<br><br>Newluxx is a Studio based in Basel, Switzerland.<br>We are focused on Fashion Research.</p>
+        <p id="nu">[nu] – new; [lux] – unit of illumination<br><br>Newluxx is a Fashion Research Studio based in Basel, Switzerland.<br>Founded in 2021.</p>
         <div id="info" hidden>
-            <p>We strive for a transmedia and multisensory design practice.</p>
-            <p>Our practice covers product design, accessory design and experience design.</p>
-            <p>Our process is based on conceptual research, bodywork, form exploration and a fusion of analog and digital modelling. We are pursuing a poetic application of digital modelling into the design process and the presented items. Exploring hybrid....</p>
-            <p>Our main interest lays in material culture. We are focused on investigating the aura of “luxus”, reflecting on values and collective norms/standards that engage identified audiences.</p>
-            <p>Every project is an intervention in the process of producing meaning and exploring relevancy within a different context.</p>
-            <p>We want to contribute to cultural production with sensitive and innovative ‘output’ capable of stimulating the sphere of feelings and emotions while provoking questions and strong positive critical thinking.</p>
+            <p>Fashion is perceived as a luxury industry and is currently strongly characterized by overproduction, “waste” and short-lived hype. However, we are fascinated by fashion and luxury as a particularly dynamic “layer of culture”. We embrace Luxury as a meaningful conversation - “A conversation about a shared set of aspirations and values”.</p>
+            <p>Clothes and object are identity markers. They manifest a personal attitude and are a testimony of time. Through the conscious selection of a personal material universe, the person takes a position.</p>
+            <p>We wonder: What are the responsibilities of fashion as part of our material culture today? By “new lux” we mean an experimental and exploratory approach to what material “fashion” can express and contribute (to a sustainable future) today. “New lux “ is the very personal search that subordinates itself to our current understanding of / perspective on the world and responds to norms and approaches in today’s fashion world. In particular, it is about the conscious investigation of the shaping of values / ideals and the clear break with previous value concepts.  For us, fashion functions as an artistic expression that is initially decoupled from commerce.  One motivation here is to look beyond known product categories and to take a holistic interdisciplinary approach.</p>
+            <p>For us Conception, shaping, method and communication resp. staging are inevitably intertwined. To take a fresh position in favour of sustainability, we believe Switzerland offers an exciting base.</p>
         </div>
         <p class="extra"><span class="m">CONTACT</span><br><a href="mailto:info@nwlx.ch">info@nwlx.ch</a></p>
-        <p class="extra"><span class="m">INSTAGRAM</span></br><a href="https://instagram.com/newluxx.ch">@newluxx.ch</a></p>
+        <p class="extra"><span class="m">INSTAGRAM</span></br><a href="https://www.instagram.com/nwlx.ch/">@nwlx.ch</a></p>
         <p id="ex"><span class="m">CURRENT EXHIBITION</span><br>INDUSTRIA BOTANICA<br>DEC 16 2021 – JAN 27 2021<br>Zabriskie Point – 1205 Genève</p>
     </header>
     <div id="ib" hidden>
-        <h3>INDUSTRIA<br>BOTANICA</h3>
+        <div id="l">
+            <h3>INDUSTRIA<br>BOTANICA</h3>
+            <a href="#">view concept & process</a>
+        </div>
         <div>
             <p>Body is Environment – Tools and Acts of Cultivation</p>
-            <p>Catch a glimpse of our state of research<br>breeding in the nwlx-incubator.</p>
-            <p>Zabriskie Point – Rond / point de Plainpalais<br>1205 Genève</p>
+            <br>
+            <p>Zabriskie Point<br>Rond / point de Plainpalais 1205 Genève</p>
             <p>Vernissage Dec 16; 6pm</p>
-            <p><a href="#">view concept & process</a></p>
             <p id="date">DEC 16 2021 – JAN 27 2022</p>
             <img src="bs.svg">
         </div>
