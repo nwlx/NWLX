@@ -15,11 +15,21 @@
         margin: 0;
         padding: 0;
         width: 100vw;
-        height: 100vh;
+        height: 100vw;
         background-color: #000;
         color: #f00;
         font-family: Avenir Next, sans-serif;
         text-align: justify;
+    }
+    ::selection {
+        color: #000;
+        background: #a00;
+    }
+    main {
+        width: 100vw;
+        height: 100vh;
+        display: grid;
+        overflow-y: hidden;
     }
     p {
         margin: 0 auto 1em auto;
@@ -27,49 +37,54 @@
         width: 80%;
     }
     h1, h2, h3, h4 {
+        margin: 0;
         font-family: Caligna, sans-serif;
         text-align: center;
-        margin: 0;
+        width: 100%;
     }
     h1 {
-        font-size: 5rem;
-        position: absolute;
-        top: 1rem;
-        width: 100%;
+        position: fixed;
+        top: 1.5rem;
+        font-size: 4.5rem;
     }
     h2 {
-        position: absolute;
+        position: fixed;
         bottom: 1rem;
-        font-size: 5rem;
         width: 100%;
+        font-size: 4.5rem;
     }
     h3 {
-        font-size: 4rem;
-        margin-bottom: 20rem;
+        font-size: 1.5rem;
+        margin: 5rem 0 5rem 0;
     }
     h4 {
-        font-size: 2rem;
+        font-size: 3.2rem;
+        margin-top: 2rem;
     }
-    .view {
+    h5 {
+        margin: .5rem;
+        font-size: 1.2rem;
+        font-style: italic;
+    }
+    div {
+        grid-row: 1;
         margin: 0;
+        padding: 0;
         width: 100vw;
-        height: 100vh;
     }
-    #invite {
-        padding-top: 5rem;
+    p {
+        padding: 1rem;
+        margin: 0 auto;
+        font-size: 1rem;
+        line-height: 1.5em;
+    }
+    #ex {
+        overflow-y: scroll;
         background: #000;
-        background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,1) 90%);
+        z-index: 1;
+        padding-top: 3rem;
         text-align: center;
-        height: 80vh;
-    }
-    #invite > * {
-        margin-bottom: 3rem;
-    }
-    #detail {
-        background: #000;
-    }
-    #nwlx {
-        font-size: 0.9em;
+        font-size: 1.2rem;
     }
     #v {
         z-index: -1;
@@ -81,24 +96,53 @@
         object-fit: cover;
         opacity: 1;
     }
-    .j { text-align: justify; }
+    span {
+        display: block;
+        padding-top: 7rem;
+        text-align: justify;
+    }
+    img {
+        display: block;
+        margin: 1rem auto;
+        height: 3.5rem;
+    }
+    a {
+        color: #f00;
+    }
+    @-moz-document url-prefix() {
+        h1 { transform: translateY(-0.13em); }
+        h2 { transform: translateY(0.13em); }
+    }
 </style>
 </head>
 <body>
-    <div class="view">
-        <h1>NWLX</h1>
-        <h2>ONE</h2>
-    </div>
-    <div class="view" id="invite">
-        <h4>DEC 16 2021 — JAN 27 2022</h4>
-        <p>Body is Environment</p>
-        <p>Tools and Acts of Cultivation</p>
-        <p>Zabriskie Point - Rond / point de Plainpalais<br>1205 Genève</p>
-        <p>Vernissage Dec 16; 6pm</p>
-        <h3>INDUSTRIA BOTANICA</h3>
-        <p class="j">NWLX INCUBATOR - For our first public display, Zabriskie Point, a former waiting area symbolically gets treansformed into the NWLX-”Incubator”, “by definition an insulated enclosure in which temperature, humidity, and other environmental conditions can be regulated at levels optimal for growth, hatching, or reproduction.” With NWLX .... By means of time and attention to process and experimentation, the generation of an equally sustainable, exciting and innovative alternative to the status quo is sought.</p>
-        <p>Catch a glimpse of our current state of research - find the work text down below.</p>
-    </div>
     <video autoplay loop muted playsinline id="v" poster="still.jpg"><source src="luxx.mp4" type="video/mp4"></video>
+    <main>
+        <div>
+            <h1>NWLX</h1>
+            <h2>ONE</h2>
+        </div>
+        <div id="ex">
+            <h3>DEC 16 2021 — JAN 27 2022</h3>
+            <h5>Body is Environment</h5>
+            <h5>Tools and Acts of Cultivation</h5>
+            <br>
+            <p id="sm">Zabriskie Point - Rond / point de Plainpalais<br>1205 Genève</p>
+            <p id="sm">Vernissage Dec 16; 6pm</p>
+            <span>
+                <h4>INDUSTRIA<br>BOTANICA</h4>
+                <p>For our first public display, Zabriskie Point, a former waiting area symbolically gets transformed into the NWLX-“Incubator”, “by definition an insulated enclosure in which temperature, humidity, and other environmental conditions can be regulated at levels optimal for growth, hatching, or reproduction.” With NWLX ....By means of time and attention to process and experimentation, the generation of an equally sustainable, exciting and innovative alternative to the status quo is sought.</p>
+                <p>Catch a glimpse of our current state of research - <a href="ib.pdf">read the work text here</a>.</p>
+                <img src="bs.svg">
+                <br>
+                <h4>NEW LUXX</h4>
+                <p>Fashion is perceived as a luxury industry and is currently strongly characterized by overproduction, “waste” and short-lived hype. However, we are fascinated by fashion and luxury as a particularly dynamic “layer of culture”. We embrace Luxury as a meaningful conversation - “A conversation about a shared set of aspirations and values”.</p>
+                <p>Clothes and object are identity markers. They manifest a personal attitude and are a testimony of time. Through the conscious selection of a personal material universe, the person takes a position.</p>
+                <p>We wonder: What are the responsibilities of fashion as part of our material culture today? By “new lux” we mean an experimental and exploratory approach to what material “fashion” can express and contribute (to a sustainable future) today. “New luxx” is the very personal search that subordinates itself to our current understanding of / perspective on the world and responds to norms and approaches in today’s fashion world. In particular, it is about the conscious investigation of the shaping of values / ideals and the clear break with previous value concepts.  For us, fashion functions as an artistic expression that is initially decoupled from commerce.  One motivation here is to look beyond known product categories and to take a holistic interdisciplinary approach.</p>
+                <p>For us Conception, shaping, method and communication resp. staging are inevitably intertwined. To take a fresh position in favour of sustainability, we believe Switzerland offers an exciting base.</p>
+            </span>
+            <br>
+        </div>
+    </main>
 </body>
 </html>
