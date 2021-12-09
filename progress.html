@@ -60,7 +60,7 @@
             margin: 0;
             animation: fadein 2s ease-in 2s 1 normal both running;
         }
-        #ib {
+        #ib, #inc {
             width: 80%;
             margin: 15vh auto;
         }
@@ -92,6 +92,24 @@
             margin: .5em 0 1em auto;
             height: 3em;
             float: right;
+        }
+        #inc p {
+            max-width: 25rem;
+            text-align: justify;
+        }
+        #inc h3 {
+            font-size: 2.65rem;
+        }
+        #inc iframe {
+            float: right;
+            width: 25rem;
+            height: 20rem;
+            border: none;
+        }
+        #conc {
+            font-size: .9rem;
+            cursor: pointer;
+            border-bottom: .1rem solid;
         }
         #date {
             font-size: 1.8rem;
@@ -152,7 +170,7 @@
     <div id="ib" hidden>
         <div id="l">
             <h3>INDUSTRIA<br>BOTANICA</h3>
-            <a href="#">view concept & process</a>
+            <span id="conc">view concept & process</span>
         </div>
         <div>
             <p>Body is Environment – Tools and Acts of Cultivation</p>
@@ -163,6 +181,12 @@
             <img src="bs.svg">
         </div>
     </div>
+    <div id="inc" hidden>
+        <iframe src="ib.pdf"></iframe>
+        <h3>NWLX INCUBATOR</h3>
+        <p>For our first public display, Zabriskie Point, a former waiting area symbolically gets transformed into the NWLX-“Incubator”, “by definition an insulated enclosure in which temperature, humidity, and other environmental conditions can be regulated at levels optimal for growth, hatching, or reproduction.” With NWLX ....By means of time and attention to process and experimentation, the generation of an equally sustainable, exciting and innovative alternative to the status quo is sought.</p>
+        <p>Catch a glimpse of our current state of research — find the work text in the booklet on your right side.</p>
+    </div>
     <h2>ONE</h2>
     <video autoplay loop muted playsinline id="v" poster="still.jpg"><source src="luxx.mp4" type="video/mp4"></video>
     <script type="text/javascript">
@@ -170,6 +194,8 @@
         var ex = document.querySelector("#ex");
         var info = document.querySelector("#info");
         var ib = document.querySelector("#ib");
+        var inc = document.querySelector("#inc");
+        var conc = document.querySelector("#conc");
         var video = document.querySelector("video");
         var nwlx = document.querySelector("h1");
         var one = document.querySelector("h2");
@@ -180,18 +206,27 @@
             ib.hidden = true;
             video.style.opacity = 1;
             one.style.color = "#f00";
+            inc.hidden = true;
         };
         var show_info = () => {
             info.hidden = !info.hidden;
             video.style.opacity = !info.hidden ? 0 : 1;
             if (!info.hidden) ib.hidden = true;
             one.style.color = "#f00";
+            inc.hidden = true;
         };
         var show_ex = () => {
             ib.hidden = !ib.hidden;
             one.style.color = ib.hidden ? "#f00" : "#000";
             video.style.opacity = 1;
             if (!ib.hidden) info.hidden = true;
+            inc.hidden = true;
+        };
+        conc.onclick = () => {
+            inc.hidden = false;
+            video.style.opacity = 0;
+            info.hidden = true;
+            ib.hidden = true;
         };
         one.onclick = show_ex;
         setTimeout(() => {
