@@ -101,9 +101,12 @@
             font-size: 2.65rem;
         }
         #inc iframe {
+            position: fixed;
+            top: 7rem;
+            left: 50vw;
             float: right;
-            width: 25rem;
-            height: 20rem;
+            width: 30rem;
+            height: 34rem;
             border: none;
         }
         #conc {
@@ -227,6 +230,7 @@
             video.style.opacity = 0;
             info.hidden = true;
             ib.hidden = true;
+            one.style.color = "rgba(0,0,0,0)";
         };
         one.onclick = show_ex;
         setTimeout(() => {
