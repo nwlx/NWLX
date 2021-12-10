@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>INDUSTRIA BOTANICA</title>
+    <style type="text/css">
+        body { margin: 0; padding: 0; }
+        html { margin: 0; padding: 0; }
+        img { margin: 0; padding: 0; width: 100%; }
+    </style>
+</head>
+<body>
+<img src="cards/1.svg">
+<script type="text/javascript">
+var page = 1;
+var img = document.querySelector("img");
+var threshold = img.clientWidth / 2;
+img.onclick = (e) => {
+    if (e.clientX > threshold && page < 13) {
+        ++page;
+        window.scroll(0,0);
+    } else if (e.clientX < threshold && page > 1) {
+        --page;
+        window.scroll(0,0);
+    }
+    img.src = `cards/${page}.svg`;
+};
+</script>
+</body>
+</html>
