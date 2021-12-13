@@ -1,167 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>NWLX</title>
-    <style type="text/css">
-        @font-face { font-family: Caligna; src: url("caligna.woff2"); }
-        @font-face { font-family: Avenir Next; src: url("avenir_next.woff2"); }
-        body {
-            margin: 0;
-            padding: 0;
-            width: 100vw;
-            height: 100vh;
-            background-color: #000;
-            color: #f00;
-            font-family: Avenir Next, sans-serif;
-            min-width: 900px;
-        }
-        ::selection {
-            color: #000;
-            background: #a00;
-        }
-        @keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
-        h1, h2, h3, .m {
-            font-family: Caligna;
-            font-weight: 400;
-            margin: 0;
-            padding: 0;
-        }
-        h2 {
-            position: fixed;
-            bottom: 0;
-            right: 0;
-            padding-right: 1rem;
-            font-size: 6em;
-            text-align: right;
-            letter-spacing: 0.06em;
-        }
-        .m {
-            font-size: 0.6rem;
-            letter-spacing: .2em;
-        }
-        header {
-            display: grid;
-            grid-column-gap: 1rem;
-            padding-top: 1rem;
-            grid-template-columns: 2fr 3fr .7fr .7fr 1.5fr;
-        }
-        h1 {
-            grid-row: 1;
-            font-size: 6em;
-            padding: 0 1rem 0 1rem;
-            height: auto;
-            letter-spacing: 0.06em;
-        }
-        header p {
-            grid-row: 1;
-            font-size: 0.85rem;
-            margin: 0;
-            animation: fadein 2s ease-in 2s 1 normal both running;
-        }
-        #ib, #inc {
-            width: 80%;
-            margin: 15vh auto;
-        }
-        #l {
-            float: left;
-        }
-        h3 {
-            font-size: 4rem;
-            letter-spacing: 0.02em;
-        }
-        #ib div {
-            display: inline;
-        }
-        #ib p {
-            text-align: right;
-            padding-right: 0.5rem;
-            line-height: 1.5rem;
-            margin: 0 0 1rem 0;
-        }
-        #ib a {
-            padding-bottom: 0.1rem;
-            font-size: 0.8rem;
-            margin-left: .2em;
-        }
-        #ib a:hover {
-            border-bottom: 0.05em solid;
-        }
-        #ib img {
-            margin: .5em 0 1em auto;
-            height: 3em;
-            float: right;
-        }
-        #inc p {
-            max-width: 25rem;
-            text-align: justify;
-        }
-        #inc h3 {
-            font-size: 2.65rem;
-        }
-        #inc iframe {
-            position: fixed;
-            top: 7rem;
-            left: 50vw;
-            float: right;
-            width: 30rem;
-            height: 34rem;
-            border: none;
-        }
-        #conc {
-            font-size: .9rem;
-            cursor: pointer;
-            border-bottom: .1rem solid;
-        }
-        #date {
-            font-size: 1.8rem;
-            font-family: Caligna, sans-serif;
-            letter-spacing: 0.06em;
-            margin: 2rem 0 1rem 0 !important;
-        }
-        #info {
-            width: 20rem;
-            grid-row: 2;
-            grid-column: 2;
-            width: 100%;
-            text-align: justify;
-        }
-        #info p {
-            margin-bottom: 1rem;
-            animation: none !important;
-        }
-        p {
-            line-height: 1.1rem;
-            width: 100%;
-        }
-        a {
-            color: #f00;
-            text-decoration: none;
-        }
-        #v {
-            z-index: -1;
-            position: fixed;
-            right: 0;
-            bottom: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 1;
-        }
-        iframe {
-            background: #fff;
-        }
-    @-moz-document url-prefix() {
-        h1 { transform: translateY(-0.13em); }
-        h2 { transform: translateY(0.13em); }
-        h3 { transform: translateY(-0.13em); }
-    }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NWLX</title>
+<style type="text/css">
+@font-face { font-family: Caligna; src: url("caligna.woff2"); }
+@font-face { font-family: Avenir Next; src: url("avenir_next.woff2"); }
+body { margin: 0; padding: 0; width: 100vw; height: 100vh; background-color: #000; color: #f00; font-family: Avenir Next, sans-serif; }
+::selection { color: #000; background: #a00; }
+#spinner { z-index: -1; position: fixed; right: 0; bottom: 0; width: 100%; height: 100%; object-fit: cover; opacity: 1; }
+@-moz-document url-prefix() {
+    h1 { transform: translateY(-0.13em); }
+    h2 { transform: translateY(0.13em); }
+}
+@media only screen and (min-width: 600px) {
+    #desktop { display: initial; }
+    #mobile { display: none; }
+    h1, h2, h3, .m { font-family: Caligna; font-weight: 400; margin: 0; padding: 0; }
+    h2 { position: fixed; bottom: 0; right: 0; padding-right: 1rem; font-size: 6em; text-align: right; letter-spacing: 0.06em; }
+
+    @keyframes fadein { from { opacity: 1; } to { opacity: 1; } }
+    .m { font-size: 0.6rem; letter-spacing: .2em; }
+    header { display: grid; grid-column-gap: 1rem; padding-top: 1rem; grid-template-columns: 2fr 3fr .7fr .7fr 1.5fr; }
+    h1 { grid-row: 1; font-size: 6em; padding: 0 1rem 0 1rem; letter-spacing: 0.06em; }
+    header p { grid-row: 1; margin: 0; font-size: 0.85rem; animation: fadein 2s ease-in 2s 1 normal both running; }
+    #info { width: 20rem; grid-row: 2; grid-column: 2; width: 100%; text-align: justify; }
+    #info p { animation: none !important; padding-bottom: 1em }
+
+    a { color: #f00; text-decoration: none; }
+    p { text-align: justify; line-height: 1.3em; }
+    h3 { font-size: 4rem; letter-spacing: 0.02em; }
+    #ib, #inc { width: 80%; margin: 15vh auto; }
+    #ib p { text-align: right; padding-right: 0.5rem; line-height: 1.5rem; margin: 0 0 1rem 0; }
+    #ib div { display: inline; }
+    #conc { font-size: .9rem; cursor: pointer; border-bottom: .1rem solid; }
+    #ib img { margin: .5em 0 1em auto; height: 3em; float: right; }
+    #l { float: left; }
+    #date { font-size: 1.8rem; font-family: Caligna, sans-serif; letter-spacing: 0.06em; margin: 2rem 0 1rem 0 !important; }
+
+    #inc p { max-width: 25rem; text-align: justify; }
+    #inc h3 { font-size: 2.65rem; }
+    #inc iframe { position: fixed; top: 7rem; left: 50vw; float: right; width: 30rem; height: 34rem; border: none; background: #fff; }
+}
+@media only screen and (max-width: 600px) {
+    #desktop { display: none; }
+    #mobile { display: initial; }
+    main { margin: 0; padding: 0; width: 100vw; height: 100vh; display: grid; overflow-y: hidden; text-align: center; hyphens: auto; }
+    p { margin: 0 auto 1em auto; padding: 0; width: 80%; }
+    h1, h2, h3, h4 { margin: 0; font-family: Caligna, sans-serif; width: 100%; }
+    h1 { position: fixed; top: 1.5rem; font-size: 4.5rem; }
+    h2 { position: fixed; bottom: 1rem; width: 100%; font-size: 4.5rem; }
+    h3 { font-size: 1.6rem; font-weight: 400; }
+    h4 { font-size: 1.6rem; margin: 4rem 0 1rem 0; }
+    h5 { margin: .5rem; font-size: 1.2rem; font-style: italic; }
+    div { z-index: 1; margin: 0; padding: 0; grid-row: 1; width: 100vw; height: 100%; overflow-y: scroll; }
+    p { padding: 1rem; margin: 0 auto; font-size: 1rem; line-height: 1.5em; }
+    #sm { font-size: .8em; }
+    #mib { background: black; }
+    #mni { background: black; }
+    #mni h4 { font-size: 2rem; }
+    #mni p { text-align: justify; }
+    #mnl { background: black; color: white; }
+    #mnl p { text-align: justify; }
+    #mc { background: black; color: white; display: flex; justify-content: center; align-items: center; flex-direction: column;}
+    #mc a { color: white; text-decoration: none; margin: 1em; }
+    #def { text-align: center !important;}
+    img { display: block; margin: 1rem auto; height: 3.5rem; }
+}
 </style>
+</html>
 </head>
 <body>
+<section id="desktop">
+    <video autoplay loop muted playsinline id="spinner" poster="still.jpg"><source src="luxx.mp4" type="video/mp4"></video>
     <header>
-        <h1>NWLX</h1>
+        <h1 id="nwlx">NWLX</h1>
         <p id="nu">[nu] – new; [lux] – unit of illumination<br><br>Newluxx is a Fashion Research Studio based in Basel, Switzerland.<br>Founded in 2021.</p>
         <div id="info" hidden>
             <p>Fashion is perceived as a luxury industry and is currently strongly characterized by overproduction, “waste” and short-lived hype. However, we are fascinated by fashion and luxury as a particularly dynamic “layer of culture”. We embrace Luxury as a meaningful conversation - “A conversation about a shared set of aspirations and values”.</p>
@@ -169,9 +83,9 @@
             <p>We wonder: What are the responsibilities of fashion as part of our material culture today? By “new lux” we mean an experimental and exploratory approach to what material “fashion” can express and contribute (to a sustainable future) today. “New lux “ is the very personal search that subordinates itself to our current understanding of / perspective on the world and responds to norms and approaches in today’s fashion world. In particular, it is about the conscious investigation of the shaping of values / ideals and the clear break with previous value concepts.  For us, fashion functions as an artistic expression that is initially decoupled from commerce.  One motivation here is to look beyond known product categories and to take a holistic interdisciplinary approach.</p>
             <p>For us Conception, shaping, method and communication resp. staging are inevitably intertwined. To take a fresh position in favour of sustainability, we believe Switzerland offers an exciting base.</p>
         </div>
-        <p class="extra"><span class="m">CONTACT</span><br><a href="mailto:contact@nwlx.ch">contact@nwlx.ch</a></p>
-        <p class="extra"><span class="m">INSTAGRAM</span></br><a href="https://www.instagram.com/nwlx.ch/">@nwlx.ch</a></p>
-        <p id="ex"><span class="m">CURRENT EXHIBITION</span><br>INDUSTRIA BOTANICA<br>DEC 16 2021 – JAN 27 2021<br>Zabriskie Point – 1205 Genève</p>
+        <p><span class="m">CONTACT</span><br><a href="mailto:contact@nwlx.ch">contact@nwlx.ch</a></p>
+        <p><span class="m">INSTAGRAM</span></br><a href="https://www.instagram.com/nwlx.ch/">@nwlx.ch</a></p>
+        <p id="exhibit"><span class="m">CURRENT EXHIBITION</span><br>INDUSTRIA BOTANICA<br>DEC 16 2021 – JAN 27 2021<br>Zabriskie Point – 1205 Genève</p>
     </header>
     <div id="ib" hidden>
         <div id="l">
@@ -193,55 +107,96 @@
         <p>For our first public display, Zabriskie Point, a former waiting area symbolically gets transformed into the NWLX-“Incubator”, “by definition an insulated enclosure in which temperature, humidity, and other environmental conditions can be regulated at levels optimal for growth, hatching, or reproduction.” With NWLX ....By means of time and attention to process and experimentation, the generation of an equally sustainable, exciting and innovative alternative to the status quo is sought.</p>
         <p>Catch a glimpse of our current state of research — find the work text in the booklet on your right side.</p>
     </div>
-    <h2>ONE</h2>
-    <video autoplay loop muted playsinline id="v" poster="still.jpg"><source src="luxx.mp4" type="video/mp4"></video>
-    <script type="text/javascript">
-        var nu = document.querySelector("#nu");
-        var ex = document.querySelector("#ex");
-        var info = document.querySelector("#info");
-        var ib = document.querySelector("#ib");
-        var inc = document.querySelector("#inc");
-        var conc = document.querySelector("#conc");
-        var video = document.querySelector("video");
-        var nwlx = document.querySelector("h1");
-        var one = document.querySelector("h2");
-        nwlx.style.cursor = "pointer";
-        one.style.cursor = "pointer";
-        nwlx.onclick = () => {
-            info.hidden = true;
-            ib.hidden = true;
-            video.style.opacity = 1;
-            one.style.color = "#f00";
-            inc.hidden = true;
-        };
-        var show_info = () => {
-            info.hidden = !info.hidden;
-            video.style.opacity = !info.hidden ? 0 : 1;
-            if (!info.hidden) ib.hidden = true;
-            one.style.color = "#f00";
-            inc.hidden = true;
-        };
-        var show_ex = () => {
-            ib.hidden = !ib.hidden;
-            one.style.color = ib.hidden ? "#f00" : "#000";
-            video.style.opacity = 1;
-            if (!ib.hidden) info.hidden = true;
-            inc.hidden = true;
-        };
-        conc.onclick = () => {
-            inc.hidden = false;
-            video.style.opacity = 0;
-            info.hidden = true;
-            ib.hidden = true;
-            one.style.color = "rgba(0,0,0,0)";
-        };
-        one.onclick = show_ex;
-        setTimeout(() => {
-            nu.style.cursor = "pointer";
-            ex.style.cursor = "pointer";
-            nu.onclick = show_info;
-            ex.onclick = show_ex;
-        }, 3000);
-    </script>
+    <h2 id="one">ONE</h2>
+</section>
+<section id="mobile">
+    <video autoplay loop muted playsinline id="spinner" poster="still.jpg"><source src="luxx.mp4" type="video/mp4"></video>
+    <main>
+        <div>
+            <h1>NWLX</h1>
+            <h2>ONE</h2>
+        </div>
+        <div id="mib">
+            <h4>INDUSTRIA<br>BOTANICA</h4>
+            <br><br>
+            <h5>Body is Environment</h5>
+            <h5>Tools and Acts of Cultivation</h5>
+            <br><br>
+            <p id="sm">Zabriskie Point - Rond / point de Plainpalais<br>1205 Genève</p>
+            <p id="sm">Vernissage Dec 16; 6pm<br>Finnissage Jan 27; 6pm</p>
+            <br><br>
+            <h3>DEC 16 2021 — JAN 27 2022</h3>
+        </div>
+        <div id="mni">
+            <h4>NWLX INCUBATOR</h4>
+            <br>
+            <p>For our first public display, Zabriskie Point, a former waiting area symbolically gets treans- formed into the NWLX-“Incubator”, “by definition an insulated enclosure in which temperature, humidity, and other environmental conditions can be regulated at levels optimal for growth, hatching, or reproduction.” WIth NWLX ....By means of time and attention to process and experimentation, the generation of an equally sustainable, exciting and innovative alternative to the status quo is sought.</p>
+            <p>Catch a glimpse of our current state of research - <a href="cards.html">read the work text here</a>.</p>
+            <img src="bs.svg">
+            <br>
+        </div>
+        <div id="mnl">
+            <h4>ABOUT</h4>
+            <p id="def">nwlx.ch<br>[nu] – new; [lux] – unit of illumination<br>Fashion Research</p>
+            <p>Fashion is perceived as a luxury industry and is currently strongly characterized by overproduction, “waste” and short-lived hype. However, we are fascinated by fashion and luxury as a particularly dynamic “layer of culture”. We embrace Luxury as a meaningful conversation - “A conversation about a shared set of aspirations and values”.</p>
+            <p>Clothes and object are identity markers. They manifest a personal attitude and are a testimony of time. Through the conscious selection of a personal material universe, the person takes a position.</p>
+            <p>We wonder: What are the responsibilities of fashion as part of our material culture today? By “new lux” we mean an experimental and exploratory approach to what material “fashion” can express and contribute (to a sustainable future) today. “New luxx” is the very personal search that subordinates itself to our current understanding of / perspective on the world and responds to norms and approaches in today’s fashion world. In particular, it is about the conscious investigation of the shaping of values / ideals and the clear break with previous value concepts.  For us, fashion functions as an artistic expression that is initially decoupled from commerce.  One motivation here is to look beyond known product categories and to take a holistic interdisciplinary approach.</p>
+            <p>For us Conception, shaping, method and communication resp. staging are inevitably intertwined. To take a fresh position in favour of sustainability, we believe Switzerland offers an exciting base.</p>
+        </div>
+        <div id="mc">
+            <a href="mailto:contact@nwlx.ch">contact@nwlx.ch</a>
+            <a href="https://www.instagram.com/nwlx.ch/">@nwlx.ch</a>
+        </div>
+        <br>
+    </main>
+</section>
+<script type="text/javascript">
+    var nu = document.querySelector("#nu");
+    var exhibit = document.querySelector("#exhibit");
+    var info = document.querySelector("#info");
+    var ib = document.querySelector("#ib");
+    var inc = document.querySelector("#inc");
+    var conc = document.querySelector("#conc");
+    var video = document.querySelector("video");
+    var nwlx = document.querySelector("#nwlx");
+    var one = document.querySelector("#one");
+    nwlx.style.cursor = "pointer";
+    one.style.cursor = "pointer";
+    nwlx.onclick = () => {
+        info.hidden = true;
+        ib.hidden = true;
+        video.style.opacity = 1;
+        one.style.color = "#f00";
+        inc.hidden = true;
+    };
+    var show_info = () => {
+        info.hidden = !info.hidden;
+        video.style.opacity = !info.hidden ? 0 : 1;
+        if (!info.hidden) ib.hidden = true;
+        one.style.color = "#f00";
+        inc.hidden = true;
+    };
+    var show_ex = () => {
+        ib.hidden = !ib.hidden;
+        one.style.color = ib.hidden ? "#f00" : "#000";
+        video.style.opacity = 1;
+        if (!ib.hidden) info.hidden = true;
+        inc.hidden = true;
+    };
+    conc.onclick = () => {
+        inc.hidden = false;
+        video.style.opacity = 0;
+        info.hidden = true;
+        ib.hidden = true;
+        one.style.color = "rgba(0,0,0,0)";
+    };
+    one.onclick = show_ex;
+    setTimeout(() => {
+        nu.style.cursor = "pointer";
+        exhibit.style.cursor = "pointer";
+        nu.onclick = show_info;
+        exhibit.onclick = show_ex;
+    }, 1);
+</script>
 </body>
 </html>
