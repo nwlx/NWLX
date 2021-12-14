@@ -19,7 +19,6 @@ body { margin: 0; padding: 0; width: 100vw; height: 100vh; background-color: #00
     #mobile { display: none; }
     h1, h2, h3, .m { font-family: Caligna; font-weight: 400; margin: 0; padding: 0; }
     h2 { position: fixed; bottom: 0; right: 0; padding-right: 1rem; font-size: 6em; text-align: right; letter-spacing: 0.06em; }
-
     @keyframes fadein { from { opacity: 1; } to { opacity: 1; } }
     .m { font-size: 0.6rem; letter-spacing: .2em; }
     header { display: grid; grid-column-gap: 1rem; padding-top: 1rem; grid-template-columns: 2fr 3fr .7fr .7fr 1.5fr; }
@@ -27,21 +26,20 @@ body { margin: 0; padding: 0; width: 100vw; height: 100vh; background-color: #00
     header p { grid-row: 1; margin: 0; font-size: 0.85rem; animation: fadein 2s ease-in 2s 1 normal both running; }
     #info { width: 20rem; grid-row: 2; grid-column: 2; width: 100%; text-align: justify; }
     #info p { animation: none !important; padding-bottom: 1em }
-
     a { color: #f00; text-decoration: none; }
     p { text-align: justify; line-height: 1.3em; }
     h3 { font-size: 4rem; letter-spacing: 0.02em; }
     #ib, #inc { width: 80%; margin: 15vh auto; }
-    #ib p { text-align: right; padding-right: 0.5rem; line-height: 1.5rem; margin: 0 0 1rem 0; }
+    #ib p { text-align: right; padding-right: 0.5rem; font-size: .8rem; line-height: 1.2em; margin: 0 0 1rem 0; }
     #ib div { display: inline; }
+    #bie { font-size: 1.1em !important; font-style: italic; }
     #conc { font-size: .9rem; cursor: pointer; border-bottom: .1rem solid; }
     #ib img { margin: .5em 0 1em auto; height: 3em; float: right; }
     #l { float: left; }
-    #date { font-size: 1.8rem; font-family: Caligna, sans-serif; letter-spacing: 0.06em; margin: 2rem 0 1rem 0 !important; }
-
-    #inc p { max-width: 25rem; text-align: justify; }
+    #date { font-size: 1.3rem !important; font-family: Caligna, sans-serif; letter-spacing: 0.06em; margin: 2rem 0 1rem 0 !important; }
+    #inc p { max-width: 25rem; text-align: justify; font-size: 0.85rem; }
     #inc h3 { font-size: 2.65rem; }
-    #inc iframe { position: fixed; top: 7rem; left: 50vw; float: right; width: 30rem; height: 34rem; border: none; background: #fff; }
+    #inc iframe { position: fixed; top: 7rem; left: 50vw; float: right; width: 20rem; height: 34rem; border: none; background: #fff; }
 }
 @media only screen and (max-width: 600px) {
     #desktop { display: none; }
@@ -49,26 +47,32 @@ body { margin: 0; padding: 0; width: 100vw; height: 100vh; background-color: #00
     main { margin: 0; padding: 0; width: 100vw; height: 100vh; display: grid; overflow-y: hidden; text-align: center; hyphens: auto; }
     p { margin: 0 auto 1em auto; padding: 0; width: 80%; }
     h1, h2, h3, h4 { margin: 0; font-family: Caligna, sans-serif; width: 100%; }
-    h1 { position: fixed; top: 1.5rem; font-size: 4.5rem; }
-    h2 { position: fixed; bottom: 1rem; width: 100%; font-size: 4.5rem; }
+    h1 { position: fixed; top: 1rem; font-size: 4.5rem; }
+    h2 { position: fixed; bottom: .5rem; width: 100%; font-size: 4.5rem; }
     h3 { font-size: 1.6rem; font-weight: 400; }
     h4 { font-size: 3.2rem; letter-spacing: 0.08em; font-weight: 400; }
     h5 { margin: .5rem; font-size: 1.2rem; font-style: italic; }
-    div { z-index: 1; margin: 0; padding: 0; grid-row: 1; width: 100vw; height: 100%; overflow-y: scroll; }
-    p { padding: 1rem; margin: 0 auto; font-size: 1rem; line-height: 1.5em; }
+    div { z-index: 1; margin: 0; padding: 0; grid-row: 1; width: 100vw; height: 100vh; overflow-y: scroll; overflow-x: hidden; }
+    p { padding-bottom: .5rem; margin: 0 auto; font-size: 1rem; line-height: 1.5em; }
     #sm { font-size: .8em; }
-    #mib { background: black; }
-    #mib h4 { background: black; margin: 4rem 0 1rem 0; }
-    #mni { background: black; }
+    #mib { background: black; display: grid; }
+    #mib h4 { margin: 2rem auto 1rem auto; }
+    #mib h3 { margin: 1rem auto 1rem auto; }
+    #mni { background: black; display: grid; grid-template-rows: .5fr 2.7fr 1fr; }
     #mni a { color: #f00; }
-    #mni h4 { font-size: 2rem; margin-top: 6rem; }
-    #mni p { text-align: justify; }
-    #mnl { background: black; color: white; }
-    #mnl p { text-align: justify; }
-    #mc { background: black; color: white; display: flex; justify-content: center; align-items: center; flex-direction: column;}
-    #mc a { color: white; text-decoration: none; margin: 1em; }
-    #def { text-align: center !important;}
-    img { display: block; margin: 1rem auto; height: 3.5rem; }
+    #mni h4 { font-size: 1.5rem; margin-bottom: 1rem; }
+    #mni p { text-align: justify; font-size: .85em; margin: auto; }
+    #mni span { margin-top: 10vh; }
+    img { display: block; margin: 1rem auto; padding-top: 1rem; height: 3.5rem; }
+    #ma { background: black; color: white; }
+    #ma p { text-align: justify; font-size: .85em; }
+    #ma h4 { font-size: 1.5rem; margin: 3rem 0 1rem 0; }
+    #ma span { display: block; margin-top: 2rem; }
+    #mc { background: black; color: white; display: flex; justify-content: center; align-items: center; flex-direction: column; }
+    #mc a { color: white; text-decoration: none; margin: .5em; }
+    #def { text-align: center !important; }
+    .focus { font-size: 1.2em; font-style: italic; }
+    span { margin: 0; padding: 0; }
 }
 </style>
 </html>
@@ -80,25 +84,24 @@ body { margin: 0; padding: 0; width: 100vw; height: 100vh; background-color: #00
         <h1 id="nwlx">NWLX</h1>
         <p id="nu">[nu] – new; [lux] – unit of illumination<br><br>Newluxx is a Fashion Research Studio based in Basel, Switzerland.<br>Founded in 2021.</p>
         <div id="info" hidden>
-            <p>Fashion is perceived as a luxury industry and is currently strongly characterized by overproduction, “waste” and short-lived hype. However, we are fascinated by fashion and luxury as a particularly dynamic “layer of culture”. We embrace Luxury as a meaningful conversation - “A conversation about a shared set of aspirations and values”.</p>
-            <p>Clothes and object are identity markers. They manifest a personal attitude and are a testimony of time. Through the conscious selection of a personal material universe, the person takes a position.</p>
-            <p>We wonder: What are the responsibilities of fashion as part of our material culture today? By “new lux” we mean an experimental and exploratory approach to what material “fashion” can express and contribute (to a sustainable future) today. “New lux “ is the very personal search that subordinates itself to our current understanding of / perspective on the world and responds to norms and approaches in today’s fashion world. In particular, it is about the conscious investigation of the shaping of values / ideals and the clear break with previous value concepts.  For us, fashion functions as an artistic expression that is initially decoupled from commerce.  One motivation here is to look beyond known product categories and to take a holistic interdisciplinary approach.</p>
-            <p>For us Conception, shaping, method and communication resp. staging are inevitably intertwined. To take a fresh position in favour of sustainability, we believe Switzerland offers an exciting base.</p>
+            <p>Clothes and object are identity markers. They manifest a personal attitude, reflect your self-image and are a testimony of time. We are fascinated by fashion and luxury as a particularly dynamic, a “layer of culture”. We embrace luxury as a meaningful conversation — A conversation about a shared set of aspirations and values.</p>
+            <p>“NWLX” is about the conscious investigation of the shaping of ideals and the clear break with previous value concepts. We currently focus on the accessory as a catalyst with a valuable plot or inter/action. One motivation here is to look beyond known product categories and to expand the idea of fashion in the digital age with its new tools and methods — essentially in favour of sustainability and environmental awareness.</p>
+            <p>For us, theory, shape studies, technical development and staging are inevitably intertwined and equally part of our search for fresh alternatives. For the purpose of research decoupled from commerce, based in Switzerland.</p>
         </div>
-        <p><span class="m">CONTACT</span><br><a href="mailto:contact@nwlx.ch">contact@nwlx.ch</a></p>
-        <p><span class="m">INSTAGRAM</span></br><a href="https://www.instagram.com/nwlx.ch/">@nwlx.ch</a></p>
+        <p><span class="m">CONTACT</span><br><a href="mailto:contact@nwlx.ch" target="_blank">contact@nwlx.ch</a></p>
+        <p><span class="m">INSTAGRAM</span></br><a href="https://www.instagram.com/nwlx.ch/" target="_blank">@nwlx.ch</a></p>
         <p id="exhibit"><span class="m">CURRENT EXHIBITION</span><br>INDUSTRIA BOTANICA<br>DEC 16 2021 – JAN 27 2021<br>Zabriskie Point – 1205 Genève</p>
     </header>
     <div id="ib" hidden>
         <div id="l">
             <h3>INDUSTRIA<br>BOTANICA</h3>
-            <span id="conc">view concept & process</span>
+            <span id="conc">read the work text</span>
         </div>
         <div>
-            <p>Body is Environment – Tools and Acts of Cultivation</p>
-            <br>
+            <p id="bie">Body is Environment – Tools and Acts of Cultivation</p>
+            <br><br>
             <p>Zabriskie Point<br>Rond / point de Plainpalais 1205 Genève</p>
-            <p>Vernissage Dec 16; 6pm</p>
+            <p>Vernissage Dec 16; 6pm<br>Finnissage Jan 27; 6pm</p>
             <p id="date">DEC 16 2021 – JAN 27 2022</p>
             <img src="bs.svg">
         </div>
@@ -106,8 +109,8 @@ body { margin: 0; padding: 0; width: 100vw; height: 100vh; background-color: #00
     <div id="inc" hidden>
         <iframe src="cards.html"></iframe>
         <h3>NWLX INCUBATOR</h3>
-        <p>For our first public display, Zabriskie Point, a former waiting area symbolically gets transformed into the NWLX-“Incubator”, “by definition an insulated enclosure in which temperature, humidity, and other environmental conditions can be regulated at levels optimal for growth, hatching, or reproduction.” With NWLX ....By means of time and attention to process and experimentation, the generation of an equally sustainable, exciting and innovative alternative to the status quo is sought.</p>
-        <p>Catch a glimpse of our current state of research — find the work text in the booklet on your right side.</p>
+        <p>For our first public display, Zabriskie Point, a former waiting area symbolically gets transformed into the NWLX-“Incubator”, “by definition an insulated enclosure in which temperature, humidity, and other environmental conditions can be regulated at levels optimal for growth, hatching, or reproduction.”</p>
+        <p>Find the work text in the booklet on the right.</p>
     </div>
     <h2 id="one">ONE</h2>
 </section>
@@ -120,34 +123,39 @@ body { margin: 0; padding: 0; width: 100vw; height: 100vh; background-color: #00
         </div>
         <div id="mib">
             <h4>INDUSTRIA<br>BOTANICA</h4>
-            <br><br>
-            <h5>Body is Environment</h5>
-            <h5>Tools and Acts of Cultivation</h5>
-            <br><br>
-            <p id="sm">Zabriskie Point - Rond / point de Plainpalais<br>1205 Genève</p>
-            <p id="sm">Vernissage Dec 16; 6pm<br>Finnissage Jan 27; 6pm</p>
-            <br><br><br>
+            <p class="focus">Body is Environment<br>Tools and Acts of Cultivation</p>
+            <span>
+                <p id="sm">Zabriskie Point - Rond / point de Plainpalais<br>1205 Genève</p>
+                <br>
+                <p id="sm">Vernissage Dec 16; 6pm<br>Finnissage Jan 27; 6pm</p>
+            </span>
             <h3>DEC 16 2021 — JAN 27 2022</h3>
         </div>
         <div id="mni">
+            <span></span>
+            <span>
             <h4>NWLX INCUBATOR</h4>
+            <p>For our first public display, Zabriskie Point, a former waiting area symbolically gets transformed into the NWLX-“Incubator”, “by definition an insulated enclosure in which temperature, humidity, and other environmental conditions can be regulated at levels optimal for growth, hatching, or reproduction.”</p>
             <br>
-            <p>For our first public display, Zabriskie Point, a former waiting area symbolically gets treans- formed into the NWLX-“Incubator”, “by definition an insulated enclosure in which temperature, humidity, and other environmental conditions can be regulated at levels optimal for growth, hatching, or reproduction.” WIth NWLX ....By means of time and attention to process and experimentation, the generation of an equally sustainable, exciting and innovative alternative to the status quo is sought.</p>
-            <p>Catch a glimpse of our current state of research - <a href="cards.html">read the work text here</a>.</p>
+            <p>Catch a glimpse of our current state of research.</p>
+            <br>
+            <a href="cards.html">Work Text</a>
+            </span>
             <img src="bs.svg">
-            <br>
         </div>
-        <div id="mnl">
+        <div id="ma">
             <h4>ABOUT</h4>
             <p id="def">nwlx.ch<br>[nu] – new; [lux] – unit of illumination<br>Fashion Research</p>
-            <p>Fashion is perceived as a luxury industry and is currently strongly characterized by overproduction, “waste” and short-lived hype. However, we are fascinated by fashion and luxury as a particularly dynamic “layer of culture”. We embrace Luxury as a meaningful conversation - “A conversation about a shared set of aspirations and values”.</p>
-            <p>Clothes and object are identity markers. They manifest a personal attitude and are a testimony of time. Through the conscious selection of a personal material universe, the person takes a position.</p>
-            <p>We wonder: What are the responsibilities of fashion as part of our material culture today? By “new lux” we mean an experimental and exploratory approach to what material “fashion” can express and contribute (to a sustainable future) today. “New luxx” is the very personal search that subordinates itself to our current understanding of / perspective on the world and responds to norms and approaches in today’s fashion world. In particular, it is about the conscious investigation of the shaping of values / ideals and the clear break with previous value concepts.  For us, fashion functions as an artistic expression that is initially decoupled from commerce.  One motivation here is to look beyond known product categories and to take a holistic interdisciplinary approach.</p>
-            <p>For us Conception, shaping, method and communication resp. staging are inevitably intertwined. To take a fresh position in favour of sustainability, we believe Switzerland offers an exciting base.</p>
+            <span>
+            <p>Clothes and object are identity markers. They manifest a personal attitude, reflect your self-image and are a testimony of time. We are fascinated by fashion and luxury as a particularly dynamic, a “layer of culture”. We embrace luxury as a meaningful conversation — A conversation about a shared set of aspirations and values.</p>
+            <p>“NWLX” is about the conscious investigation of the shaping of ideals and the clear break with previous value concepts. We currently focus on the accessory as a catalyst with a valuable plot or inter/action. One motivation here is to look beyond known product categories and to expand the idea of fashion in the digital age with its new tools and methods — essentially in favour of sustainability and environmental awareness.</p>
+            <p>For us, theory, shape studies, technical development and staging are inevitably intertwined and equally part of our search for fresh alternatives. For the purpose of research decoupled from commerce, based in Switzerland.</p>
+            <br>
+            </span>
         </div>
         <div id="mc">
-            <a href="mailto:contact@nwlx.ch">contact@nwlx.ch</a>
-            <a href="https://www.instagram.com/nwlx.ch/">@nwlx.ch</a>
+            <a href="mailto:contact@nwlx.ch" target="_blank">contact@nwlx.ch</a>
+            <a href="https://www.instagram.com/nwlx.ch/" target="_blank">@nwlx.ch</a>
         </div>
         <br>
     </main>
