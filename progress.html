@@ -40,6 +40,17 @@ body { margin: 0; padding: 0; width: 100vw; height: 100vh; background-color: #00
     #inc p { max-width: 25rem; text-align: justify; font-size: 0.85rem; }
     #inc h3 { font-size: 2.65rem; }
     #inc iframe { position: fixed; top: 7rem; left: 50vw; float: right; width: 20rem; height: 34rem; border: none; background: #fff; }
+    #nu span { display: block; margin-top: .3rem; }
+    #exhibit { padding-right: .5em; text-align: left; }
+    #ins2 { display: none; }
+}
+@media only screen and (max-width: 1000px) {
+    #nwlx, #one { font-size: 4.5rem; }
+    header { grid-template-columns: 2fr 3fr .7fr 1.5fr; }
+    .con { grid-column: 3; }
+    .ins { display: none; }
+    .ins2 { display: block; padding-top: .2em; }
+    .exhibit { grid-column: 4; }
 }
 @media only screen and (max-width: 600px) {
     #desktop { display: none; }
@@ -82,15 +93,15 @@ body { margin: 0; padding: 0; width: 100vw; height: 100vh; background-color: #00
     <video autoplay loop muted playsinline id="spinner" poster="still.jpg"><source src="luxx.mp4" type="video/mp4"></video>
     <header>
         <h1 id="nwlx">NWLX</h1>
-        <p id="nu">[nu] – new; [lux] – unit of illumination<br><br>Newluxx is a Fashion Research Studio based in Basel, Switzerland.<br>Founded in 2021.</p>
+        <p id="nu">[nu] – new; [lux] – unit of illumination<br>Fashon Research<br><span>Exploring value concepts and shifting understanding of luxury around body and environment.</span></p>
         <div id="info" hidden>
             <p>Clothes and object are identity markers. They manifest a personal attitude, reflect your self-image and are a testimony of time. We are fascinated by fashion and luxury as a particularly dynamic, a “layer of culture”. We embrace luxury as a meaningful conversation — A conversation about a shared set of aspirations and values.</p>
             <p>“NWLX” is about the conscious investigation of the shaping of ideals and the clear break with previous value concepts. We currently focus on the accessory as a catalyst with a valuable plot or inter/action. One motivation here is to look beyond known product categories and to expand the idea of fashion in the digital age with its new tools and methods — essentially in favour of sustainability and environmental awareness.</p>
             <p>For us, theory, shape studies, technical development and staging are inevitably intertwined and equally part of our search for fresh alternatives. For the purpose of research decoupled from commerce, based in Switzerland.</p>
         </div>
-        <p><span class="m">CONTACT</span><br><a href="mailto:contact@nwlx.ch" target="_blank">contact@nwlx.ch</a></p>
-        <p><span class="m">INSTAGRAM</span></br><a href="https://www.instagram.com/nwlx.ch/" target="_blank">@nwlx.ch</a></p>
-        <p id="exhibit"><span class="m">CURRENT EXHIBITION</span><br>INDUSTRIA BOTANICA<br>DEC 16 2021 – JAN 27 2021<br>Zabriskie Point – 1205 Genève</p>
+        <p class="con"><span class="m">CONTACT</span><br><a href="mailto:contact@nwlx.ch" target="_blank">contact@nwlx.ch</a><span class="ins2" hidden><span class="m">INSTAGRAM</span></br><a href="https://www.instagram.com/nwlx.ch/" target="_blank">@nwlx.ch</a></span></p>
+        <p class="ins"><span class="m">INSTAGRAM</span></br><a href="https://www.instagram.com/nwlx.ch/" target="_blank">@nwlx.ch</a></p>
+        <p id="exhibit"><span class="m">CURRENT EXHIBITION</span><br>INDUSTRIA BOTANICA<br>DEC&nbsp;16&nbsp;2021 – JAN&nbsp;27&nbsp;2021<br>Zabriskie Point – 1205&nbsp;Genève</p>
     </header>
     <div id="ib" hidden>
         <div id="l">
