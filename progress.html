@@ -224,7 +224,7 @@ body { margin: 0; padding: 0; width: 100vw; height: 100vh; background-color: #00
 
     var page = 0;
     var last = 0;
-    main.onscroll = () => {
+    main.ontouchend = () => {
         var page = Math.round(main.scrollLeft / window.innerWidth);
         if (page !== last) {
             main.scrollTo({ left: page * window.innerWidth, behavior: "smooth" });
