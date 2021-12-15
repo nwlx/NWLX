@@ -37,9 +37,10 @@ body { margin: 0; padding: 0; width: 100vw; height: 100vh; background-color: #00
     #ib img { margin: .5em 0 1em auto; height: 3em; float: right; }
     #l { float: left; }
     #date { font-size: 1.3rem !important; font-family: Caligna, sans-serif; letter-spacing: 0.06em; margin: 2rem 0 1rem 0 !important; }
+    #inc { max-width: 50rem; }
     #inc p { max-width: 25rem; text-align: justify; font-size: 0.85rem; }
     #inc h3 { font-size: 2.65rem; }
-    #inc iframe { position: fixed; top: 7rem; left: 50vw; float: right; width: 20rem; height: 34rem; border: none; background: #fff; }
+    #inc iframe { position: relative; top: -6rem; width: 18rem; height: 30.35rem; float: right; border: none; background: #fff; }
     #nu span { display: block; margin-top: .3rem; }
     #exhibit { padding-right: .5em; text-align: left; }
     #ins2 { display: none; }
@@ -84,6 +85,7 @@ body { margin: 0; padding: 0; width: 100vw; height: 100vh; background-color: #00
     #def { text-align: center !important; }
     .focus { font-size: 1.2em; font-style: italic; }
     span { margin: 0; padding: 0; }
+    svg { display: block; width: 8vw; position: absolute; top: 50%; left: 92%; transition: opacity 1s; }
 }
 </style>
 </html>
@@ -131,6 +133,7 @@ body { margin: 0; padding: 0; width: 100vw; height: 100vh; background-color: #00
         <div>
             <h1>NWLX</h1>
             <h2>ONE</h2>
+            <svg id="r" viewBox="0 0 100 100"><path stroke-width=".2em" stroke-linecap="point" stroke-linejoin="miter" fill="none" d="M10,10 L65,50 L10,90" stroke="#f00" fill /></svg>
         </div>
         <div id="mib">
             <h4>INDUSTRIA<br>BOTANICA</h4>
@@ -181,6 +184,7 @@ body { margin: 0; padding: 0; width: 100vw; height: 100vh; background-color: #00
     var video = document.querySelector("video");
     var nwlx = document.querySelector("#nwlx");
     var one = document.querySelector("#one");
+    var r = document.querySelector("#r");
     var main = document.querySelector("main");
 
     nwlx.style.cursor = "pointer";
@@ -230,6 +234,15 @@ body { margin: 0; padding: 0; width: 100vw; height: 100vh; background-color: #00
             main.scrollTo({ left: page * window.innerWidth, behavior: "smooth" });
         }
         last = page;
+    };
+
+    r.onclick = () => {
+        main.scrollTo({ left: window.innerWidth, behavior: "smooth" });
+        r.style.display = "none";
+    }
+    main.onscroll = () => {
+        r.style.display = "none";
+        main.onscroll = null;
     };
 </script>
 </body>
