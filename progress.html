@@ -57,9 +57,9 @@ body { margin: 0; padding: 0; width: 100vw; height: 100vh; background-color: #00
     #mobile { display: initial; }
     main { margin: 0; padding: 0; width: 100vw; height: 100vh; display: grid; overflow-y: hidden; text-align: center; hyphens: auto; }
     p { margin: 0 auto 1em auto; padding: 0; width: 80%; }
-    h1, h2, h3, h4 { margin: 0; font-family: Caligna, sans-serif; width: 100%; }
-    h1 { position: fixed; top: 1rem; font-size: 4.5rem; }
-    h2 { position: fixed; bottom: .5rem; width: 100%; font-size: 4.5rem; }
+    h1, h2, h3, h4 { margin: 0; font-family: Caligna, sans-serif; width: 100%; font-weight: 400; }
+    h1 { position: fixed; top: 1rem; font-size: 4.5rem; letter-spacing: .06em; }
+    h2 { position: fixed; bottom: .5rem; width: 100%; font-size: 4.5rem; letter-spacing: .06em; }
     h3 { font-size: 1.6rem; font-weight: 400; }
     h4 { font-size: 3.2rem; letter-spacing: 0.08em; font-weight: 400; }
     h5 { margin: .5rem; font-size: 1.2rem; font-style: italic; }
@@ -150,7 +150,7 @@ body { margin: 0; padding: 0; width: 100vw; height: 100vh; background-color: #00
             <br>
             <p>Catch a glimpse of our current state of research.</p>
             <br>
-            <a href="cards.html">Work Text</a>
+            <a href="cards.html">WORK TEXT</a>
             </span>
             <img src="bs.svg">
         </div>
@@ -181,8 +181,11 @@ body { margin: 0; padding: 0; width: 100vw; height: 100vh; background-color: #00
     var video = document.querySelector("video");
     var nwlx = document.querySelector("#nwlx");
     var one = document.querySelector("#one");
+    var main = document.querySelector("main");
+
     nwlx.style.cursor = "pointer";
     one.style.cursor = "pointer";
+
     nwlx.onclick = () => {
         info.hidden = true;
         ib.hidden = true;
@@ -218,6 +221,16 @@ body { margin: 0; padding: 0; width: 100vw; height: 100vh; background-color: #00
         nu.onclick = show_info;
         exhibit.onclick = show_ex;
     }, 1);
+
+    var page = 0;
+    var last = 0;
+    main.onscroll = () => {
+        var page = Math.round(main.scrollLeft / window.innerWidth);
+        if (page !== last) {
+            main.scrollTo({ left: page * window.innerWidth, behavior: "smooth" });
+        }
+        last = page;
+    };
 </script>
 </body>
 </html>
