@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>NWLX</title>
+<script type="text/javascript" id="poly" src="smoothscroll.js"></script>
 <style type="text/css">
 @font-face { font-family: Caligna; src: url("caligna.woff2"); }
 @font-face { font-family: Avenir Next; src: url("avenir_next.woff2"); }
@@ -56,28 +57,28 @@ body { margin: 0; padding: 0; width: 100vw; height: 100vh; background-color: #00
 @media only screen and (max-width: 600px) {
     #desktop { display: none; }
     #mobile { display: initial; }
-    main { margin: 0; padding: 0; width: 100vw; height: 100vh; display: grid; overflow-y: hidden; text-align: center; hyphens: auto; }
+    main { margin: 0; padding: 0; width: 100vw; height: 100vh; display: grid; overflow-y: hidden; text-align: center; }
     p { margin: 0 auto 1em auto; padding: 0; width: 80%; }
     h1, h2, h3, h4 { margin: 0; font-family: Caligna, sans-serif; width: 100%; font-weight: 400; }
     h1 { position: fixed; top: 1rem; font-size: 4.5rem; letter-spacing: .06em; }
     h2 { position: fixed; bottom: .5rem; width: 100%; font-size: 4.5rem; letter-spacing: .06em; }
-    h3 { font-size: 1.6rem; font-weight: 400; }
-    h4 { font-size: 3.2rem; letter-spacing: 0.08em; font-weight: 400; }
+    h3 { font-size: 1.2rem; font-weight: 400; }
+    h4 { font-size: 2.5rem; letter-spacing: 0.08em; font-weight: 400; }
     h5 { margin: .5rem; font-size: 1.2rem; font-style: italic; }
     div { z-index: 1; margin: 0; padding: 0; grid-row: 1; width: 100vw; height: 100vh; overflow-y: scroll; overflow-x: hidden; }
-    p { padding-bottom: .5rem; margin: 0 auto; font-size: 1rem; line-height: 1.5em; }
+    p { padding-bottom: .5rem; margin: 0 auto; font-size: .9rem; line-height: 1.2em; max-width: 19em; }
     #sm { font-size: .8em; }
-    #mib { background: black; display: grid; }
+    #mib { background: black; display: grid; height: 100%; }
     #mib h4 { margin: 2rem auto 1rem auto; }
     #mib h3 { margin: 1rem auto 1rem auto; }
-    #mni { background: black; display: grid; grid-template-rows: .5fr 2.7fr 1fr; }
+    #mni { background: black; display: grid; }
     #mni a { color: #f00; }
     #mni h4 { font-size: 1.5rem; margin-bottom: 1rem; }
-    #mni p { text-align: justify; font-size: .85em; margin: auto; }
+    #mni p { text-align: justify; hyphens: auto; font-size: .85em; margin: auto; }
     #mni span { margin-top: 10vh; }
     img { display: block; margin: 1rem auto; padding-top: 1rem; height: 3.5rem; }
     #ma { background: black; color: white; }
-    #ma p { text-align: justify; font-size: .85em; }
+    #ma p { text-align: justify; hyphens: auto; font-size: .85em; }
     #ma h4 { font-size: 1.5rem; margin: 3rem 0 1rem 0; }
     #ma span { display: block; margin-top: 2rem; }
     #mc { background: black; color: white; display: flex; justify-content: center; align-items: center; flex-direction: column; }
@@ -146,7 +147,7 @@ body { margin: 0; padding: 0; width: 100vw; height: 100vh; background-color: #00
             <h3>DEC 16 2021 — JAN 27 2022</h3>
         </div>
         <div id="mni">
-            <span></span>
+            <!-- <span></span> -->
             <span>
             <h4>NWLX INCUBATOR</h4>
             <p>For our first public display, Zabriskie Point, a former waiting area symbolically gets transformed into the NWLX-“Incubator”, “by definition an insulated enclosure in which temperature, humidity, and other environmental conditions can be regulated at levels optimal for growth, hatching, or reproduction.”</p>
@@ -175,6 +176,9 @@ body { margin: 0; padding: 0; width: 100vw; height: 100vh; background-color: #00
     </main>
 </section>
 <script type="text/javascript">
+    var script = document.querySelector('#poly');
+    script.addEventListener('load', () => smoothscroll.polyfill());
+
     var nu = document.querySelector("#nu");
     var exhibit = document.querySelector("#exhibit");
     var info = document.querySelector("#info");
