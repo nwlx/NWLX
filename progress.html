@@ -57,7 +57,8 @@ body { margin: 0; padding: 0; width: 100vw; height: 100vh; background-color: #00
 @media only screen and (max-width: 600px) {
     #desktop { display: none; }
     #mobile { display: initial; }
-    main { margin: 0; padding: 0; width: 100vw; height: 100vh; display: grid; overflow-y: hidden; text-align: center;
+    main { margin: 0; padding: 0; width: 100vw; height: 100vh; max-height: -webkit-fill-available;
+        display: grid; overflow-y: hidden; text-align: center;
         overscroll-behavior: contain; touch-action: pan-x; scroll-snap-type: x mandatory; }
     p { margin: 0 auto 1em auto; padding: 0; width: 80%; }
     h1, h2, h3, h4 { margin: 0; font-family: Caligna, sans-serif; width: 100%; font-weight: 400; }
@@ -155,7 +156,7 @@ body { margin: 0; padding: 0; width: 100vw; height: 100vh; background-color: #00
             <br>
             <p>Catch a glimpse of our current state of research.</p>
             <br>
-            <a href="cards.html">WORK TEXT</a>
+            <a href="cards.html">read the work text</a>
             </span>
             <img src="bs.svg">
         </div>
