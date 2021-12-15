@@ -235,24 +235,6 @@ body { margin: 0; padding: 0; width: 100vw; height: 100vh; background-color: #00
         nu.onclick = show_info;
         exhibit.onclick = show_ex;
     }, 1);
-
-    var page = 0;
-    var last = 0;
-    main.ontouchend = () => {
-        var page = Math.round(main.scrollLeft / window.innerWidth);
-        if (page !== last) {
-            main.scrollTo({ left: page * window.innerWidth, behavior: "smooth" });
-        }
-        last = page;
-    };
-    r.onclick = () => {
-        main.scrollTo({ left: window.innerWidth, behavior: "smooth" });
-        r.style.display = "none";
-    }
-    main.onscroll = () => {
-        r.style.display = "none";
-        main.onscroll = null;
-    };
 </script>
 </body>
 </html>
