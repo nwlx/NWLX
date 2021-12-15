@@ -53,6 +53,7 @@ body { margin: 0; padding: 0; width: 100vw; height: 100vh; background-color: #00
     .ins { display: none; }
     .ins2 { display: block; padding-top: .2em; }
     .exhibit { grid-column: 4; }
+    #bs { bottom: 0; right: 13em; }
 }
 @media only screen and (max-width: 600px) {
     #desktop { display: none; }
@@ -198,30 +199,33 @@ body { margin: 0; padding: 0; width: 100vw; height: 100vh; background-color: #00
     nwlx.onclick = () => {
         info.hidden = true;
         ib.hidden = true;
+        bs.hidden = ib.hidden;
         video.style.opacity = 1;
         one.style.color = "#f00";
         inc.hidden = true;
     };
     var show_info = () => {
         info.hidden = !info.hidden;
-        video.style.opacity = !info.hidden ? 0 : 1;
-        if (!info.hidden) ib.hidden = true;
-        one.style.color = "#f00";
+        ib.hidden = true;
+        bs.hidden = true;
         inc.hidden = true;
+        video.style.opacity = !info.hidden ? 0 : 1;
+        one.style.color = "#f00";
     };
     var show_ex = () => {
         ib.hidden = !ib.hidden;
         bs.hidden = ib.hidden;
+        info.hidden = true;
+        inc.hidden = true;
         one.style.color = ib.hidden ? "#f00" : "#000";
         video.style.opacity = 1;
-        if (!ib.hidden) info.hidden = true;
-        inc.hidden = true;
     };
     conc.onclick = () => {
         inc.hidden = false;
-        video.style.opacity = 0;
         info.hidden = true;
         ib.hidden = true;
+        bs.hidden = true;
+        video.style.opacity = 0;
         one.style.color = "rgba(0,0,0,0)";
     };
     one.onclick = show_ex;
@@ -241,7 +245,6 @@ body { margin: 0; padding: 0; width: 100vw; height: 100vh; background-color: #00
         }
         last = page;
     };
-
     r.onclick = () => {
         main.scrollTo({ left: window.innerWidth, behavior: "smooth" });
         r.style.display = "none";
