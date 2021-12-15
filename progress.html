@@ -34,7 +34,7 @@ body { margin: 0; padding: 0; width: 100vw; height: 100vh; background-color: #00
     #ib div { display: inline; }
     #bie { font-size: 1.1em !important; font-style: italic; }
     #conc { font-size: .9rem; cursor: pointer; border-bottom: .1rem solid; }
-    #ib img { margin: .5em 0 1em auto; height: 3em; float: right; }
+    #bs { margin: .5em 0 1em auto; height: 3em; float: right; position: fixed; bottom: .2em; right: 16em; }
     #l { float: left; }
     #date { font-size: 1.3rem !important; font-family: Caligna, sans-serif; letter-spacing: 0.06em; margin: 2rem 0 1rem 0 !important; }
     #inc { max-width: 50rem; }
@@ -116,7 +116,6 @@ body { margin: 0; padding: 0; width: 100vw; height: 100vh; background-color: #00
             <p>Zabriskie Point<br>Rond / point de Plainpalais 1205 Genève</p>
             <p>Vernissage Dec 16; 6pm<br>Finnissage Jan 27; 6pm</p>
             <p id="date">DEC 16 2021 – JAN 27 2022</p>
-            <img src="bs.svg">
         </div>
     </div>
     <div id="inc" hidden>
@@ -125,6 +124,7 @@ body { margin: 0; padding: 0; width: 100vw; height: 100vh; background-color: #00
         <p>For our first public display, Zabriskie Point, a former waiting area symbolically gets transformed into the NWLX-“Incubator”, “by definition an insulated enclosure in which temperature, humidity, and other environmental conditions can be regulated at levels optimal for growth, hatching, or reproduction.”</p>
         <p>Find the work text in the booklet on the right.</p>
     </div>
+    <img id="bs" src="bs.svg" hidden>
     <h2 id="one">ONE</h2>
 </section>
 <section id="mobile">
@@ -185,6 +185,7 @@ body { margin: 0; padding: 0; width: 100vw; height: 100vh; background-color: #00
     var nwlx = document.querySelector("#nwlx");
     var one = document.querySelector("#one");
     var r = document.querySelector("#r");
+    var bs = document.querySelector("#bs");
     var main = document.querySelector("main");
 
     nwlx.style.cursor = "pointer";
@@ -206,6 +207,7 @@ body { margin: 0; padding: 0; width: 100vw; height: 100vh; background-color: #00
     };
     var show_ex = () => {
         ib.hidden = !ib.hidden;
+        bs.hidden = ib.hidden;
         one.style.color = ib.hidden ? "#f00" : "#000";
         video.style.opacity = 1;
         if (!ib.hidden) info.hidden = true;
