@@ -10,6 +10,7 @@
 body { margin: 0; padding: 0; width: 100vw; height: 100vh; background-color: #000; color: #f00; font-family: Avenir Next, sans-serif; }
 ::selection { color: #000; background: #a00; }
 #spinner { z-index: -1; position: fixed; right: 0; bottom: 0; width: 100%; height: 100%; object-fit: cover; opacity: 1; }
+@keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
 @-moz-document url-prefix() {
     h1 { transform: translateY(-0.13em); }
     h2 { transform: translateY(0.13em); }
@@ -19,7 +20,6 @@ body { margin: 0; padding: 0; width: 100vw; height: 100vh; background-color: #00
     #mobile { display: none; }
     h1, h2, h3, .m { font-family: Caligna; font-weight: 400; margin: 0; padding: 0; }
     h2 { position: fixed; bottom: 0; right: 0; padding-right: 1rem; font-size: 6em; text-align: right; letter-spacing: 0.06em; }
-    @keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
     .m { font-size: 0.6rem; letter-spacing: .2em; }
     header { display: grid; grid-column-gap: 1rem; padding-top: 1rem; grid-template-columns: 2fr 3fr .7fr .7fr 1.5fr; }
     h1 { grid-row: 1; font-size: 6em; padding: 0 1rem 0 1rem; letter-spacing: 0.06em; }
@@ -75,7 +75,7 @@ body { margin: 0; padding: 0; width: 100vw; height: 100vh; background-color: #00
     #mib h4 { margin: 2rem auto 1rem auto; }
     #mib h3 { margin: 1rem auto 1rem auto; }
     #mni { background: black; display: grid; }
-    #mni a { color: #f00; }
+    #mni a { color: #f00; font-size: .85em; }
     #mni h4 { font-size: 1.2rem; margin-bottom: 1rem; }
     #mni p { text-align: justify; hyphens: auto; font-size: .85em; margin: auto; }
     #mni span { margin-top: 10vh; }
@@ -85,11 +85,13 @@ body { margin: 0; padding: 0; width: 100vw; height: 100vh; background-color: #00
     #ma h4 { font-size: 1.5rem; margin: 3rem 0 1rem 0; }
     #ma span { display: block; margin-top: 2rem; }
     #mc { background: black; color: white; display: flex; justify-content: center; align-items: center; flex-direction: column; }
-    #mc a { color: white; text-decoration: none; margin: .5em; }
+    #mc a { color: white; text-decoration: none; margin: .7em; font-size: .85em; }
     #def { text-align: center !important; }
     .focus { font-size: 1.2em; font-style: italic; }
     span { margin: 0; padding: 0; }
-    svg { display: block; width: 8vw; position: absolute; top: 50%; left: 92%; transition: opacity 1s; }
+    #l, #r { opacity: 0; width: 8vw; position: fixed; top: 50%; z-index: 2; transition: opacity .3s; }
+    #r { left: 92%; opacity: 1; }
+    #l { left: 2%; }
 }
 </style>
 </html>
@@ -134,10 +136,11 @@ body { margin: 0; padding: 0; width: 100vw; height: 100vh; background-color: #00
 <section id="mobile">
     <video autoplay loop muted playsinline id="spinner" poster="still.jpg"><source src="luxx.mp4" type="video/mp4"></video>
     <main>
+        <svg id="r" viewBox="0 0 100 100"><path stroke-width=".25em" stroke-linecap="point" stroke-linejoin="miter" fill="none" d="M10,10 L65,50 L10,90" stroke="#f00" fill /></svg>
+        <svg id="l" viewBox="0 0 100 100"><path stroke-width=".25em" stroke-linecap="point" stroke-linejoin="miter" fill="none" d="M65,10 L10,50 L65,90" stroke="#f00" fill /></svg>
         <div>
             <h1>NWLX</h1>
             <h2>ONE</h2>
-            <!-- <svg id="r" viewBox="0 0 100 100"><path stroke-width=".2em" stroke-linecap="point" stroke-linejoin="miter" fill="none" d="M10,10 L65,50 L10,90" stroke="#f00" fill /></svg> -->
         </div>
         <div id="mib">
             <h4>INDUSTRIA<br>BOTANICA</h4>
@@ -187,9 +190,10 @@ body { margin: 0; padding: 0; width: 100vw; height: 100vh; background-color: #00
     var video = document.querySelector("video");
     var nwlx = document.querySelector("#nwlx");
     var one = document.querySelector("#one");
-    var r = document.querySelector("#r");
     var bs = document.querySelector("#bs");
     var main = document.querySelector("main");
+    var l = document.querySelector("svg#l");
+    var r = document.querySelector("svg#r");
 
     nwlx.style.cursor = "pointer";
     one.style.cursor = "pointer";
@@ -233,6 +237,19 @@ body { margin: 0; padding: 0; width: 100vw; height: 100vh; background-color: #00
         nu.onclick = show_info;
         exhibit.onclick = show_ex;
     }, 3500);
+
+    main.addEventListener("scroll", () => {
+        if (main.scrollLeft < (window.innerWidth/2)) {
+            l.style.opacity = 0;
+        } else {
+            l.style.opacity = 1;
+        }
+        if (main.scrollLeft > (window.innerWidth*3)) {
+            r.style.opacity = 0;
+        } else {
+            r.style.opacity = 1;
+        }
+    });
 </script>
 </body>
 </html>
