@@ -44,7 +44,7 @@ var l = document.querySelector("#l");
 var r = document.querySelector("#r");
 img.onclick = (e) => {
     var threshold = window.innerWidth / 2;
-    if (e.clientX > threshold && page < 13) {
+    if (e.clientX > threshold && page < 15) {
         ++page;
         window.scroll(0,0);
     } else if (e.clientX < threshold && page > 1) {
