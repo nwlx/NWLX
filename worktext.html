@@ -16,19 +16,19 @@
     </style>
 </head>
 <body>
-<img src="cards/1.svg">
-<img src="cards/2.svg" hidden>
-<img src="cards/3.svg" hidden>
-<img src="cards/4.svg" hidden>
-<img src="cards/5.svg" hidden>
-<img src="cards/6.svg" hidden>
-<img src="cards/7.svg" hidden>
-<img src="cards/8.svg" hidden>
-<img src="cards/9.svg" hidden>
-<img src="cards/10.svg" hidden>
-<img src="cards/11.svg" hidden>
-<img src="cards/12.svg" hidden>
-<img src="cards/13.svg" hidden>
+<img src="cards/1.jpg">
+<img src="cards/2.jpg" hidden>
+<img src="cards/3.jpg" hidden>
+<img src="cards/4.jpg" hidden>
+<img src="cards/5.jpg" hidden>
+<img src="cards/6.jpg" hidden>
+<img src="cards/7.jpg" hidden>
+<img src="cards/8.jpg" hidden>
+<img src="cards/9.jpg" hidden>
+<img src="cards/10.jpg" hidden>
+<img src="cards/11.jpg" hidden>
+<img src="cards/12.jpg" hidden>
+<img src="cards/13.jpg" hidden>
 <div>
 <svg id="l" viewBox="0 0 100 100">
     <path stroke-width=".2em" stroke-linecap="point" stroke-linejoin="miter" fill="none" d="M65,10 L10,50 L65,90" stroke="#f00" fill />
@@ -51,7 +51,7 @@ img.onclick = (e) => {
         --page;
         window.scroll(0,0);
     }
-    img.src = `cards/${page}.svg`;
+    img.src = `cards/${page}.jpg`;
     l.style.opacity = 0;
     r.style.opacity = 0;
 };
@@ -59,7 +59,7 @@ l.onclick = () => {
     if (page > 1) {
         --page;
         window.scroll(0,0);
-        img.src = `cards/${page}.svg`;
+        img.src = `cards/${page}.jpg`;
     }
     l.style.opacity = 0;
     r.style.opacity = 0;
@@ -68,7 +68,7 @@ r.onclick = () => {
     if (page < 13) {
         ++page;
         window.scroll(0,0);
-        img.src = `cards/${page}.svg`;
+        img.src = `cards/${page}.jpg`;
     }
     l.style.opacity = 0;
     r.style.opacity = 0;
